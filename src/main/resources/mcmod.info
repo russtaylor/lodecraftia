@@ -1,0 +1,16 @@
+[
+{
+  "modid": "vombat",
+  "name": "Vombat Mod",
+  "description": "Beginnings of the tests.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Vombatiform"],
+  "credits": "Vombatiform, per'aps?",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
