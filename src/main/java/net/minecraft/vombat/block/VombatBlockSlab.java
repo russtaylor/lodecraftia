@@ -1,16 +1,15 @@
 package net.minecraft.vombat.block;
 
 import java.util.List;
-import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -23,22 +22,11 @@ public class VombatBlockSlab extends BlockSlab {
     private static Block singleSlab = null;
 
     public VombatBlockSlab (boolean isDoubleSlab) {
-        super(isDoubleSlab, Material.rock);
+        super(Material.rock);
         if(!isDoubleSlab) {
             singleSlab = this;
         }
         this.useNeighborBrightness = true;
-    }
-
-    @Override
-    protected ItemStack createStackedBlock(int damage) {
-        return new ItemStack(singleSlab, 2, damage & 7);
-    }
-
-    /* Was called getFullSlabName in pre 1.7 */
-    @Override
-    public String func_150002_b(int metadata) {
-        return "tile.marble-slab";
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
@@ -53,7 +41,22 @@ public class VombatBlockSlab extends BlockSlab {
     }
 
     @Override
-    public Item getItemDropped(int par1, Random par2Random, int par3) {
-        return ItemBlock.getItemFromBlock(singleSlab);
+    public String getFullSlabName(int p_150002_1_) {
+        return "tile.marble-slab";
+    }
+
+    @Override
+    public boolean isDouble() {
+        return false;
+    }
+
+    @Override
+    public IProperty func_176551_l() {
+        return null;
+    }
+
+    @Override
+    public Object func_176553_a(ItemStack p_176553_1_) {
+        return null;
     }
 }

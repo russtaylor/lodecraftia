@@ -10,7 +10,7 @@ import net.minecraft.vombat.VombatMod;
  */
 public class VombatItemSlab extends ItemSlab {
     public VombatItemSlab(Block block) {
-        super(block, (BlockSlab) VombatMod.marbleSlabSingle, (BlockSlab) VombatMod.marbleSlabDouble, false);
+        super(block, (BlockSlab) VombatMod.marbleSlabSingle, (BlockSlab) VombatMod.marbleSlabDouble);
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
     }

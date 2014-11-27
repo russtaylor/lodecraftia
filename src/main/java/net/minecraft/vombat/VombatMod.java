@@ -54,38 +54,37 @@ public class VombatMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         // Marble Block
-        marbleBlock = new VombatBlock(Material.rock).setBlockName("marble").setHardness(4.0F)
-                .setStepSound(Block.soundTypeStone).setCreativeTab(CreativeTabs.tabBlock)
-                .setBlockTextureName(VombatMod.MOD_ID + ":" + "marble");
+        marbleBlock = new VombatBlock(Material.rock)
+                .setHardness(4.0F)
+                .setStepSound(Block.soundTypeStone)
+                .setCreativeTab(CreativeTabs.tabBlock);
         marbleBlock.setHarvestLevel("pickaxe", 0);
 
         // Marble Slabs
-        marbleSlabSingle = new VombatBlockSlab(false).setBlockName("marble-slab-single")
+        marbleSlabSingle = new VombatBlockSlab(false)
                 .setHardness(4.0F)
-                .setCreativeTab(CreativeTabs.tabBlock)
-                .setBlockTextureName(VombatMod.MOD_ID + ":" + "marble");
+                .setCreativeTab(CreativeTabs.tabBlock);
         marbleSlabSingle.setHarvestLevel("pickaxe", 0);
-        marbleSlabDouble = new VombatBlockSlab(true).setBlockName("marble-slab-double")
-                .setHardness(4.0F)
-                .setBlockTextureName(VombatMod.MOD_ID + ":" + "marble");
+        marbleSlabDouble = new VombatBlockSlab(true)
+                .setHardness(4.0F);
         marbleSlabDouble.setHarvestLevel("pickaxe", 0);
 
         // Marble Fence
-        marbleFence = new BlockFence(VombatMod.MOD_ID + ":" + "marble", Material.rock)
-                .setBlockName("marble-fence")
+        marbleFence = new BlockFence(Material.rock)
                 .setHardness(4.0F)
                 .setCreativeTab(CreativeTabs.tabBlock);
         marbleFence.setHarvestLevel("pickaxe", 0);
 
         // Marble Wall
-        marbleWall = new VombatBlockWall().setBlockName("marble-wall")
+        marbleWall = new VombatBlockWall()
                 .setHardness(4.0F);
         marbleWall.setHarvestLevel("pickaxe", 0);
 
         // Marble Stairs
-        marbleStairs = new VombatStairs(marbleBlock, 1).setBlockName("marble-stairs")
-                .setHardness(4.0F).setStepSound(Block.soundTypeStone).setCreativeTab(CreativeTabs.tabBlock)
-                .setBlockTextureName(VombatMod.MOD_ID + ":" + "marble");
+        marbleStairs = new VombatStairs(marbleBlock)
+                .setHardness(4.0F)
+                .setStepSound(Block.soundTypeStone)
+                .setCreativeTab(CreativeTabs.tabBlock);
 
         GameRegistry.registerBlock(marbleBlock, "Marble");
         GameRegistry.registerBlock(marbleSlabSingle, VombatItemSlab.class, "marble-slab-single");
