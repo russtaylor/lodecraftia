@@ -2,13 +2,13 @@ package net.minecraft.vombat.world;
 
 import java.util.Random;
 
-import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
 import net.minecraft.vombat.VombatMod;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 /**
  * Adds the custom blocks we've created to world generation.

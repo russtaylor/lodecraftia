@@ -1,11 +1,5 @@
 package net.minecraft.vombat;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
@@ -17,6 +11,12 @@ import net.minecraft.vombat.block.VombatBlockWall;
 import net.minecraft.vombat.block.VombatItemSlab;
 import net.minecraft.vombat.block.VombatStairs;
 import net.minecraft.vombat.world.VombatBlockGenerator;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = VombatMod.MOD_ID, name = VombatMod.MOD_NAME, version = VombatMod.VERSION)
 public class VombatMod
