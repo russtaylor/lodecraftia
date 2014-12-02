@@ -1,5 +1,5 @@
 {
-  "parent": "vombat:block/frozen_stone",
+  "parent": "lodecraftia:block/marble-block",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

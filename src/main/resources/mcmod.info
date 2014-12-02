@@ -1,14 +1,14 @@
 [
 {
-  "modid": "vombat",
-  "name": "Vombat Mod",
+  "modid": "lodecraftia",
+  "name": "Lodecraftia",
   "description": "Beginnings of the tests.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Vombatiform"],
-  "credits": "Vombatiform, per'aps?",
+  "authorList": ["Lodeclaw", "Vombatiform"],
+  "credits": "Good sir Lodey.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
