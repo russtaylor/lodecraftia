@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.lodecraftia.CommonProxy;
 import net.minecraft.lodecraftia.LodecraftiaMod;
 import net.minecraft.lodecraftia.block.BlockList;
-import net.minecraft.lodecraftia.block.ModBlock;
+import net.minecraft.lodecraftia.block.IModBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ClientProxy extends CommonProxy {
     @Override
     public void registerRenderers() {
-        for (ModBlock block : BlockList.blockList) {
+        for (IModBlock block : BlockList.blockList) {
             Item item = GameRegistry.findItem(LodecraftiaMod.MOD_ID, block.getBlockName());
             registerBlockRenderer(item, LodecraftiaMod.MOD_ID + ":" + block.getBlockName());
         }

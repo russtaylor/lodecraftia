@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
  *
  * Created by russt on 11/24/14.
  */
-public class VombatBlockGenerator implements IWorldGenerator {
+public class ModBlockGenerator implements IWorldGenerator {
     @Override
     public void generate(Random random, int x, int z, World world, IChunkProvider iChunkProvider, IChunkProvider iChunkProvider1) {
         if(world.provider.getDimensionId() == 0) { // Only spawn in the normal world.
@@ -24,7 +24,7 @@ public class VombatBlockGenerator implements IWorldGenerator {
     }
 
     public void generateMarble(World world, Random random, int x, int z) {
-        addBlockSpawn(LodecraftiaMod.blockHandler.blockList.marbleBlock.getDefaultState(), world, random, x ,z, 16, 16, 16, 15, 50);
+        addBlockSpawn(LodecraftiaMod.blockHandler.blockList.marble.getDefaultState(), world, random, x ,z, 16, 16, 16, 15, 50);
     }
 
     public void addBlockSpawn(IBlockState block, World world, Random random, int blockXPos, int blockZPos,

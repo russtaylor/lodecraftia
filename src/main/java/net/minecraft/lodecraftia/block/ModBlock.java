@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  *
  * Created by russt on 11/21/14.
  */
-public class ModBlock extends Block {
+public class ModBlock extends Block implements IModBlock {
 
     private String blockName;
 

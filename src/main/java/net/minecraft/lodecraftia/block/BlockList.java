@@ -11,8 +11,10 @@ import com.google.common.collect.Lists;
  */
 public class BlockList {
 
-    public static List<ModBlock> blockList = Lists.newArrayList();
+    public static List<IModBlock> blockList = Lists.newArrayList();
 
-    public ModBlock marbleBlock;
+    public ModBlock marble;
+    public ModBlockStairs marbleStairs;
+    //public ModBlockWall marbleWall;
 
 }

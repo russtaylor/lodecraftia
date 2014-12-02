@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "lodecraftia:blocks/marble-block"
+    "all": "lodecraftia:blocks/marble"
   }
 }

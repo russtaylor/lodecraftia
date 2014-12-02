@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/marble-block",
+  "parent": "lodecraftia:block/marble",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

@@ -1,7 +1,7 @@
 package net.minecraft.lodecraftia;
 
 import net.minecraft.lodecraftia.block.BlockHandler;
-import net.minecraft.lodecraftia.world.VombatBlockGenerator;
+import net.minecraft.lodecraftia.world.ModBlockGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -14,13 +14,13 @@ public class LodecraftiaMod
 {
     public static final String MOD_ID = "lodecraftia";
     public static final String VERSION = "0.1";
-    public static final String MOD_NAME = "Vombat Mod";
+    public static final String MOD_NAME = "Lodecraftia";
 
     // Blocks
     public static BlockHandler blockHandler = new BlockHandler();
 
     // World generation
-    private VombatBlockGenerator generator = new VombatBlockGenerator();
+    private ModBlockGenerator generator = new ModBlockGenerator();
 
     @Mod.Instance
     public static LodecraftiaMod instance;

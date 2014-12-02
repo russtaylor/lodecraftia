@@ -1,6 +1,7 @@
 package net.minecraft.lodecraftia.block;
 
-import net.minecraft.lodecraftia.block.marble.MarbleBlock;
+import net.minecraft.lodecraftia.block.marble.Marble;
+import net.minecraft.lodecraftia.block.marble.MarbleStairs;
 
 /**
  * Handles the creation of various types of blocks.
@@ -20,6 +21,8 @@ public class BlockHandler {
     }
 
     private void registerMarble() {
-        blockList.marbleBlock = new MarbleBlock().register();
+        blockList.marble = new Marble().register();
+        blockList.marbleStairs = new MarbleStairs((Marble) blockList.marble).register();
+        //blockList.marbleWall = new MarbleBlockWall((MarbleBlock) blockList.marble).register();
     }
 }
