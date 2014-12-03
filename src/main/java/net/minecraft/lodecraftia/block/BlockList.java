@@ -15,6 +15,6 @@ public class BlockList {
 
     public ModBlock marble;
     public ModBlockStairs marbleStairs;
-    //public ModBlockWall marbleWall;
+    public ModBlockWall marbleWall;
 
 }

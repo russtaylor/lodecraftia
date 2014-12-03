@@ -2,6 +2,7 @@ package net.minecraft.lodecraftia.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockWall;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -16,6 +17,9 @@ public class ModBlockWall extends BlockWall implements IModBlock {
     public ModBlockWall(Block block, String blockName) {
         super(block);
         this.blockName = blockName;
+        setUnlocalizedName(blockName);
+        setCreativeTab(CreativeTabs.tabBlock);
+        useNeighborBrightness = true;
     }
 
     @Override

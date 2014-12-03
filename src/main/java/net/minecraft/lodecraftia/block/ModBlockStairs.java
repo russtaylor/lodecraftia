@@ -20,9 +20,10 @@ public class ModBlockStairs extends BlockStairs implements IModBlock {
         this.blockName = blockName;
         setUnlocalizedName(blockName);
         setCreativeTab(CreativeTabs.tabBlock);
-        this.useNeighborBrightness = true;
+        useNeighborBrightness = true;
     }
 
+    @Override
     public String getBlockName() {
         return blockName;
     }
