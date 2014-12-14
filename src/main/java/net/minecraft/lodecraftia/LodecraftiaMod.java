@@ -1,6 +1,7 @@
 package net.minecraft.lodecraftia;
 
 import net.minecraft.lodecraftia.block.BlockHandler;
+import net.minecraft.lodecraftia.recipe.RecipeHandler;
 import net.minecraft.lodecraftia.world.ModBlockGenerator;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -19,6 +20,9 @@ public class LodecraftiaMod
     // Blocks
     public static BlockHandler blockHandler = new BlockHandler();
 
+    // Recipes
+    public static RecipeHandler recipeHandler = new RecipeHandler();
+
     // World generation
     private ModBlockGenerator generator = new ModBlockGenerator();
 
@@ -32,6 +36,7 @@ public class LodecraftiaMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         blockHandler.registerBlocks();
+        recipeHandler.registerRecipes();
         GameRegistry.registerWorldGenerator(generator, 50);
     }
 

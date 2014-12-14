@@ -28,6 +28,14 @@ public class ModBlock extends Block implements IModBlock {
         return blockName;
     }
 
+    public float getBlockHardness() {
+        return this.blockHardness;
+    }
+
+    public float getBlockResistance() {
+        return this.blockResistance;
+    }
+
     public ModBlock register(String blockName) {
         GameRegistry.registerBlock(this, blockName);
         BlockList.blockList.add(this);

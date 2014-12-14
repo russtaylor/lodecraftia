@@ -3,7 +3,7 @@ package net.minecraft.lodecraftia.block.marble;
 import net.minecraft.lodecraftia.block.ModBlockWall;
 
 /**
- * Marble block walls! Yay!
+ * Marble walls! Yay!
  *
  * Created by russt on 12/2/14.
  */

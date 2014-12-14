@@ -31,11 +31,9 @@ public class ModBlockWall extends Block implements IModBlock {
     public static final PropertyBool WEST = PropertyBool.create("west");
 
     private String blockName;
-    private Material material;
 
     public ModBlockWall(Block block, String blockName) {
         super(block.getMaterial());
-        this.material = block.getMaterial();
         this.blockName = blockName;
         this.setDefaultState(this.blockState.getBaseState()
                 .withProperty(UP, false)
@@ -66,6 +64,11 @@ public class ModBlockWall extends Block implements IModBlock {
 
     public boolean isOpaqueCube() {
         return false;
+    }
+
+    @Override
+    public boolean canPlaceTorchOnTop(IBlockAccess access, BlockPos pos) {
+        return true;
     }
 
     /**
@@ -103,34 +106,29 @@ public class ModBlockWall extends Block implements IModBlock {
         float f3 = 0.75F;
         float f4 = 1.0F;
 
-        if (northFlag)
-        {
+        if (northFlag) {
             f2 = 0.0F;
         }
 
-        if (flag1)
-        {
+        if (flag1) {
             f3 = 1.0F;
         }
 
-        if (flag2)
-        {
+        if (flag2) {
             f = 0.0F;
         }
 
-        if (flag3)
-        {
+        if (flag3) {
             f1 = 1.0F;
         }
 
-        if (northFlag && flag1 && !flag2 && !flag3)
-        {
+        if (northFlag && flag1 && !flag2 && !flag3) {
             f4 = 0.8125F;
             f = 0.3125F;
             f1 = 0.6875F;
         }
-        else if (!northFlag && !flag1 && flag2 && flag3)
-        {
+
+        else if (!northFlag && !flag1 && flag2 && flag3) {
             f4 = 0.8125F;
             f2 = 0.3125F;
             f3 = 0.6875F;

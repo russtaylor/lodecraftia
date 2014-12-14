@@ -13,8 +13,13 @@ public class BlockList {
 
     public static List<IModBlock> blockList = Lists.newArrayList();
 
-    public ModBlock marble;
-    public ModBlockStairs marbleStairs;
-    public ModBlockWall marbleWall;
+    public static ModBlock marble;
+    public static ModBlockStairs marbleStairs;
+    public static ModBlockWall marbleWall;
+    public static ModBlockSlab marbleSlabSingle;
+    public static ModBlockDoubleSlab marbleSlabDouble;
+
+    public static ModBlockWall netherQuartzWall;
+    public static ModBlockWall netherBrickWall;
 
 }
