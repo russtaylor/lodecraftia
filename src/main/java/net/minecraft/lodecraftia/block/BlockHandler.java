@@ -4,8 +4,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.marble.Marble;
 import net.minecraft.lodecraftia.block.marble.MarbleStairs;
 import net.minecraft.lodecraftia.block.marble.MarbleWall;
-import net.minecraft.lodecraftia.block.netherquartz.NetherQuartzWall;
 import net.minecraft.lodecraftia.block.vanilla.NetherBrickWall;
+import net.minecraft.lodecraftia.block.vanilla.NetherQuartzWall;
+import net.minecraft.lodecraftia.block.vanilla.StoneWall;
 
 /**
  * Handles the creation of various types of blocks.
@@ -21,7 +22,7 @@ public class BlockHandler {
     }
 
     public void registerBlocks() {
-        registerMarble();
+        //registerMarble();
         registerVanillaBlockExtensions();
     }
 
@@ -41,5 +42,6 @@ public class BlockHandler {
     private void registerVanillaBlockExtensions() {
         BlockList.netherQuartzWall = new NetherQuartzWall(Blocks.quartz_block).register();
         BlockList.netherBrickWall = new NetherBrickWall(Blocks.nether_brick).register();
+        BlockList.stoneWall = new StoneWall(Blocks.stone).register();
     }
 }

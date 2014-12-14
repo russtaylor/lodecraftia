@@ -21,5 +21,6 @@ public class BlockList {
 
     public static ModBlockWall netherQuartzWall;
     public static ModBlockWall netherBrickWall;
+    public static ModBlockWall stoneWall;
 
 }

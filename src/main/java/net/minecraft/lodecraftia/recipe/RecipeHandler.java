@@ -1,5 +1,6 @@
 package net.minecraft.lodecraftia.recipe;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.lodecraftia.block.BlockList;
@@ -12,7 +13,13 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class RecipeHandler {
     public void registerRecipes() {
-        ItemStack netherQuartzStack = new ItemStack(Blocks.quartz_block);
-        GameRegistry.addRecipe(new ItemStack(BlockList.netherQuartzWall, 6), "xxx", "xxx", 'x', netherQuartzStack);
+        registerWall(BlockList.netherQuartzWall, Blocks.quartz_block);
+        registerWall(BlockList.netherBrickWall, Blocks.nether_brick);
+    }
+
+    public void registerWall(Block wallBlock, Block sourceBlock) {
+        ItemStack sourceItemStack = new ItemStack(sourceBlock);
+        ItemStack wallStack = new ItemStack(wallBlock, 6);
+        GameRegistry.addRecipe(wallStack, "xxx", "xxx", 'x', sourceItemStack);
     }
 }

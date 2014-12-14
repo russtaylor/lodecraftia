@@ -1,4 +1,4 @@
-package net.minecraft.lodecraftia.block.netherquartz;
+package net.minecraft.lodecraftia.block.vanilla;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockWall;

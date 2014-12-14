@@ -3,7 +3,6 @@ package net.minecraft.lodecraftia.world;
 import java.util.Random;
 
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.lodecraftia.LodecraftiaMod;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -24,7 +23,7 @@ public class ModBlockGenerator implements IWorldGenerator {
     }
 
     public void generateMarble(World world, Random random, int x, int z) {
-        addBlockSpawn(LodecraftiaMod.blockHandler.blockList.marble.getDefaultState(), world, random, x ,z, 16, 16, 16, 15, 50);
+        //addBlockSpawn(LodecraftiaMod.blockHandler.blockList.marble.getDefaultState(), world, random, x ,z, 16, 16, 16, 15, 50);
     }
 
     public void addBlockSpawn(IBlockState block, World world, Random random, int blockXPos, int blockZPos,
