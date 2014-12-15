@@ -1,6 +1,7 @@
 {
-    "parent": "block/wall_inventory",
+    "parent": "lodecraftia:block/wall_inventory",
     "textures": {
-        "wall": "blocks/sandstone_smooth"
+        "wall": "blocks/sandstone_smooth",
+        "end": "blocks/sandstone_normal"
     }
 }
