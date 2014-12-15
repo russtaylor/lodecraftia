@@ -19,7 +19,8 @@ public class RecipeHandler {
         registerWall(BlockList.stoneWall, Blocks.stone);
         registerWall(BlockList.stoneBrickWall, Blocks.stonebrick);
         registerWall(BlockList.sandstoneWall, Blocks.sandstone);
-        registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.CHISELED.func_176675_a());
+        registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
+        registerWall(BlockList.brickWall, Blocks.brick_block);
     }
 
     public void registerWall(Block wallBlock, Block sourceBlock) {
@@ -27,8 +28,8 @@ public class RecipeHandler {
     }
 
     public void registerWall(Block wallBlock, Block sourceBlock, int meta) {
-        ItemStack sourceItemStack = new ItemStack(sourceBlock);
-        ItemStack wallStack = new ItemStack(wallBlock, 6, meta);
+        ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
+        ItemStack wallStack = new ItemStack(wallBlock, 6);
         GameRegistry.addRecipe(wallStack, "xxx", "xxx", 'x', sourceItemStack);
     }
 }

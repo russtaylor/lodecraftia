@@ -19,5 +19,6 @@ public class BlockList {
     public static ModBlockWall stoneBrickWall;
     public static ModBlockWall sandstoneWall;
     public static ModBlockWall sandstoneBrickWall;
+    public static ModBlockWall brickWall;
 
 }
