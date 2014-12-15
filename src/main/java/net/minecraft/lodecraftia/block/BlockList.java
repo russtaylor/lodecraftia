@@ -17,5 +17,7 @@ public class BlockList {
     public static ModBlockWall netherBrickWall;
     public static ModBlockWall stoneWall;
     public static ModBlockWall stoneBrickWall;
+    public static ModBlockWall sandstoneWall;
+    public static ModBlockWall sandstoneBrickWall;
 
 }

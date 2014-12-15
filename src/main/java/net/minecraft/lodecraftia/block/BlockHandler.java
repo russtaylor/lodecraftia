@@ -3,6 +3,8 @@ package net.minecraft.lodecraftia.block;
 import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.vanilla.NetherBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.NetherQuartzWall;
+import net.minecraft.lodecraftia.block.vanilla.SandstoneBrickWall;
+import net.minecraft.lodecraftia.block.vanilla.SandstoneWall;
 import net.minecraft.lodecraftia.block.vanilla.StoneBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.StoneWall;
 
@@ -28,5 +30,7 @@ public class BlockHandler {
         BlockList.netherBrickWall = new NetherBrickWall(Blocks.nether_brick).register();
         BlockList.stoneWall = new StoneWall(Blocks.stone).register();
         BlockList.stoneBrickWall = new StoneBrickWall(Blocks.stonebrick).register();
+        BlockList.sandstoneWall = new SandstoneWall(Blocks.sandstone).register();
+        BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.sandstone).register();
     }
 }
