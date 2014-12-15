@@ -15,6 +15,8 @@ public class RecipeHandler {
     public void registerRecipes() {
         registerWall(BlockList.netherQuartzWall, Blocks.quartz_block);
         registerWall(BlockList.netherBrickWall, Blocks.nether_brick);
+        registerWall(BlockList.stoneWall, Blocks.stone);
+        registerWall(BlockList.stoneBrickWall, Blocks.stonebrick);
     }
 
     public void registerWall(Block wallBlock, Block sourceBlock) {

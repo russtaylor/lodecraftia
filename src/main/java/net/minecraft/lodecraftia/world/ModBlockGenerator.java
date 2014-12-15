@@ -18,12 +18,8 @@ public class ModBlockGenerator implements IWorldGenerator {
     @Override
     public void generate(Random random, int x, int z, World world, IChunkProvider iChunkProvider, IChunkProvider iChunkProvider1) {
         if(world.provider.getDimensionId() == 0) { // Only spawn in the normal world.
-            generateMarble(world, random, x * 16, z * 16);
+            //Overworld spawning should occur here.
         }
-    }
-
-    public void generateMarble(World world, Random random, int x, int z) {
-        //addBlockSpawn(LodecraftiaMod.blockHandler.blockList.marble.getDefaultState(), world, random, x ,z, 16, 16, 16, 15, 50);
     }
 
     public void addBlockSpawn(IBlockState block, World world, Random random, int blockXPos, int blockZPos,

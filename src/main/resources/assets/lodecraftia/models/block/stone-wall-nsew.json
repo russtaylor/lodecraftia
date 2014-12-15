@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_nsew",
     "textures": {
-        "wall": "lodecraftia:blocks/marble"
+        "wall": "blocks/stone"
     }
 }

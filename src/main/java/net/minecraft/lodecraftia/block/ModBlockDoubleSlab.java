@@ -26,6 +26,6 @@ public class ModBlockDoubleSlab extends ModBlockSlab {
 
     @Override
     public Item getItemDropped(IBlockState state, Random par2random, int par3) {
-        return Item.getItemFromBlock(BlockList.marbleSlabSingle);
+        return Item.getItemFromBlock(singleSlabBlock);
     }
 }

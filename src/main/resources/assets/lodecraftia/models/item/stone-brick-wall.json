@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/marble",
+  "parent": "lodecraftia:block/stone-brick-wall-inventory",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

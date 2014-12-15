@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_ne",
     "textures": {
-        "wall": "lodecraftia:blocks/marble"
+        "wall": "blocks/stone"
     }
 }
