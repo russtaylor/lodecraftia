@@ -21,4 +21,9 @@ public class BlockList {
     public static ModBlockWall sandstoneBrickWall;
     public static ModBlockWall brickWall;
 
+    public static ModBlockStairs ironStairs;
+    public static ModBlockStairs goldStairs;
+    public static ModBlockStairs polishedAndesiteStairs;
+    public static ModBlockStairs polishedDioriteStairs;
+    public static ModBlockStairs polishedGraniteStairs;
 }
