@@ -3,6 +3,7 @@ package net.minecraft.lodecraftia.block;
 import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.vanilla.BrickWall;
 import net.minecraft.lodecraftia.block.vanilla.GoldStairs;
+import net.minecraft.lodecraftia.block.vanilla.HardenedClayStairs;
 import net.minecraft.lodecraftia.block.vanilla.IronStairs;
 import net.minecraft.lodecraftia.block.vanilla.NetherBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.NetherQuartzWall;
@@ -45,5 +46,6 @@ public class BlockHandler {
         BlockList.polishedAndesiteStairs = new PolishedAndesiteStairs(Blocks.stone).register();
         BlockList.polishedDioriteStairs = new PolishedDioriteStairs(Blocks.stone).register();
         BlockList.polishedGraniteStairs = new PolishedGraniteStairs(Blocks.stone).register();
+        BlockList.hardenedClayStairs = new HardenedClayStairs(Blocks.hardened_clay).register();
     }
 }

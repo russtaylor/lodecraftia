@@ -26,4 +26,5 @@ public class BlockList {
     public static ModBlockStairs polishedAndesiteStairs;
     public static ModBlockStairs polishedDioriteStairs;
     public static ModBlockStairs polishedGraniteStairs;
+    public static ModBlockStairs hardenedClayStairs;
 }
