@@ -1,5 +1,6 @@
 package net.minecraft.lodecraftia.block;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.vanilla.BrickWall;
@@ -34,6 +35,11 @@ public class BlockHandler {
     }
 
     private void registerVanillaBlockExtensions() {
+        registerVanillaWalls();
+        registerVanillaStairs();
+    }
+
+    private void registerVanillaWalls() {
         BlockList.netherQuartzWall = new NetherQuartzWall(Blocks.quartz_block).register();
         BlockList.netherBrickWall = new NetherBrickWall(Blocks.nether_brick).register();
         BlockList.stoneWall = new StoneWall(Blocks.stone).register();
@@ -41,12 +47,24 @@ public class BlockHandler {
         BlockList.sandstoneWall = new SandstoneWall(Blocks.sandstone).register();
         BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.sandstone).register();
         BlockList.brickWall = new BrickWall(Blocks.brick_block).register();
+    }
 
+    private void registerVanillaStairs() {
         BlockList.ironStairs = new IronStairs(Blocks.iron_block).register();
         BlockList.goldStairs = new GoldStairs(Blocks.gold_block).register();
         BlockList.polishedAndesiteStairs = new PolishedAndesiteStairs(Blocks.stone).register();
         BlockList.polishedDioriteStairs = new PolishedDioriteStairs(Blocks.stone).register();
         BlockList.polishedGraniteStairs = new PolishedGraniteStairs(Blocks.stone).register();
         BlockList.hardenedClayStairs = new HardenedClayStairs((BlockColored) Blocks.stained_hardened_clay).register();
+    }
+
+    private void registerSlab(String singleSlabName, Block parentBlock, float blockHardness, float blockResistance) {
+        ModBlockSlab singleSlab = new ModBlockSlab(parentBlock, singleSlabName, blockHardness, blockResistance);
+        ModBlockDoubleSlab doubleSlab = new ModBlockDoubleSlab(singleSlab, singleSlabName, blockHardness, blockResistance);
+        singleSlab.register(singleSlabName, singleSlab, doubleSlab);
+    }
+
+    private void registerSlab(String singleSlabName, ModBlock parentBlock) {
+        registerSlab(singleSlabName, parentBlock, parentBlock.getBlockHardness(), parentBlock.getBlockResistance());
     }
 }
