@@ -31,5 +31,4 @@ public class BlockList {
 
     // Slabs
     public static ModBlockSlab ironSlab;
-    public static ModBlockDoubleSlab ironSlabDouble;
 }

@@ -8,11 +8,11 @@ import net.minecraft.item.Item;
 /**
 * Created by russt on 12/9/14.
 */
-public class ModBlockDoubleSlab extends ModBlockSlab {
+public class ModBlockDoubleSlab extends ModBlockSingleSlab {
 
-    private ModBlockSlab singleSlabBlock;
+    private ModBlockSingleSlab singleSlabBlock;
 
-    public ModBlockDoubleSlab(ModBlockSlab singleSlabBlock, String blockName,
+    public ModBlockDoubleSlab(ModBlockSingleSlab singleSlabBlock, String blockName,
                               float blockHardness, float blockResistance) {
         super(singleSlabBlock, blockName + "-double", blockHardness, blockResistance);
         this.singleSlabBlock = singleSlabBlock;

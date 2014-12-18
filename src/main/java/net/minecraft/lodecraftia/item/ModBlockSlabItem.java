@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.lodecraftia.block.ModBlockDoubleSlab;
-import net.minecraft.lodecraftia.block.ModBlockSlab;
+import net.minecraft.lodecraftia.block.ModBlockSingleSlab;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
@@ -18,7 +18,7 @@ public class ModBlockSlabItem extends ItemBlock {
     private final BlockSlab singleSlab;
     private final BlockSlab doubleSlab;
 
-    public ModBlockSlabItem(Block block, ModBlockSlab singleSlab, ModBlockDoubleSlab doubleSlab) {
+    public ModBlockSlabItem(Block block, ModBlockSingleSlab singleSlab, ModBlockDoubleSlab doubleSlab) {
         super(block);
         this.singleSlab = singleSlab;
         this.doubleSlab = doubleSlab;

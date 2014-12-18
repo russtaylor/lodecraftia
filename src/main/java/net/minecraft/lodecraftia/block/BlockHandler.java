@@ -1,11 +1,11 @@
 package net.minecraft.lodecraftia.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.vanilla.BrickWall;
 import net.minecraft.lodecraftia.block.vanilla.GoldStairs;
 import net.minecraft.lodecraftia.block.vanilla.HardenedClayStairs;
+import net.minecraft.lodecraftia.block.vanilla.IronSlab;
 import net.minecraft.lodecraftia.block.vanilla.IronStairs;
 import net.minecraft.lodecraftia.block.vanilla.NetherBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.NetherQuartzWall;
@@ -37,6 +37,7 @@ public class BlockHandler {
     private void registerVanillaBlockExtensions() {
         registerVanillaWalls();
         registerVanillaStairs();
+        registerVanillaSlabs();
     }
 
     private void registerVanillaWalls() {
@@ -58,13 +59,7 @@ public class BlockHandler {
         BlockList.hardenedClayStairs = new HardenedClayStairs((BlockColored) Blocks.stained_hardened_clay).register();
     }
 
-    private void registerSlab(String singleSlabName, Block parentBlock, float blockHardness, float blockResistance) {
-        ModBlockSlab singleSlab = new ModBlockSlab(parentBlock, singleSlabName, blockHardness, blockResistance);
-        ModBlockDoubleSlab doubleSlab = new ModBlockDoubleSlab(singleSlab, singleSlabName, blockHardness, blockResistance);
-        singleSlab.register(singleSlabName, singleSlab, doubleSlab);
-    }
-
-    private void registerSlab(String singleSlabName, ModBlock parentBlock) {
-        registerSlab(singleSlabName, parentBlock, parentBlock.getBlockHardness(), parentBlock.getBlockResistance());
+    private void registerVanillaSlabs() {
+        BlockList.ironSlab = new IronSlab(Blocks.iron_block).register();
     }
 }
