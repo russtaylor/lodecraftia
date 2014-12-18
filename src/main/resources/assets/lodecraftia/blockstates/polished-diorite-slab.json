@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "lodecraftia:polished-diorite-slab-bottom" },
+    "half=top": { "model": "lodecraftia:polished-diorite-slab-top" }
+  }
+}

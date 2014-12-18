@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "lodecraftia:polished-granite-slab-bottom" },
+    "half=top": { "model": "lodecraftia:polished-granite-slab-top" }
+  }
+}

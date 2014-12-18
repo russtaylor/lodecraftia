@@ -31,4 +31,8 @@ public class BlockList {
 
     // Slabs
     public static ModBlockSlab ironSlab;
+    public static ModBlockSlab goldSlab;
+    public static ModBlockSlab polishedAndesiteSlab;
+    public static ModBlockSlab polishedDioriteSlab;
+    public static ModBlockSlab polishedGraniteSlab;
 }
