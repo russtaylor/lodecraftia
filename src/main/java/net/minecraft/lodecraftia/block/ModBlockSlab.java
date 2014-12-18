@@ -18,10 +18,6 @@ public class ModBlockSlab {
         this.doubleSlab = new ModBlockDoubleSlab(singleSlab, singleSlabName, blockHardness, blockResistance);
     }
 
-    public ModBlockSlab(String singleSlabName, ModBlock parentBlock) {
-        this(singleSlabName, parentBlock, parentBlock.getBlockHardness(), parentBlock.getBlockResistance());
-    }
-
     public ModBlockSingleSlab getSingleSlab() {
         return singleSlab;
     }
@@ -31,7 +27,7 @@ public class ModBlockSlab {
     }
 
     public ModBlockSlab register() {
-        GameRegistry.registerBlock(doubleSlab, ModBlockSlabItem.class, doubleSlab.getBlockName(), singleSlab, doubleSlab);
+        GameRegistry.registerBlock(doubleSlab, null, doubleSlab.getBlockName(), singleSlab, doubleSlab);
         GameRegistry.registerBlock(singleSlab, ModBlockSlabItem.class, singleSlab.getBlockName(), singleSlab, doubleSlab);
         BlockList.blockList.add(singleSlab);
         return this;
