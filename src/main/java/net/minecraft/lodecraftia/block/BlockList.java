@@ -37,4 +37,6 @@ public class BlockList {
     public static ModBlockSlab polishedAndesiteSlab;
     public static ModBlockSlab polishedDioriteSlab;
     public static ModBlockSlab polishedGraniteSlab;
+    public static ModBlockSlab lapisLazuliSlab;
+    public static ModBlockSlab smoothSandstoneSlab;
 }

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=bottom": { "model": "lodecraftia:lapis-lazuli-slab-bottom" },
+    "half=top": { "model": "lodecraftia:lapis-lazuli-slab-top" }
+  }
+}
