@@ -1,10 +1,16 @@
 package net.minecraft.lodecraftia.recipe;
 
+import java.util.Iterator;
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSandStone;
 import net.minecraft.block.BlockStone;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.lodecraftia.block.BlockList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -15,6 +21,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class RecipeHandler {
     public void registerRecipes() {
+        removeVanillaRecipes();
         registerWallRecipes();
         registerStairRecipes();
         registerSlabRecipes();
@@ -36,6 +43,9 @@ public class RecipeHandler {
         registerStair(BlockList.polishedAndesiteStairs, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetaFromState());
         registerStair(BlockList.polishedDioriteStairs, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetaFromState());
         registerStair(BlockList.polishedGraniteStairs, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetaFromState());
+        registerStair(BlockList.lapisLazuliStairs, Blocks.lapis_block);
+        registerStair(BlockList.smoothSandstoneStairs, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
+        registerStair(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.func_176675_a());
     }
 
     public void registerSlabRecipes() {
@@ -44,6 +54,26 @@ public class RecipeHandler {
         registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetaFromState());
         registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetaFromState());
         registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetaFromState());
+    }
+
+    public void removeVanillaRecipes() {
+        removeRecipe(Item.getItemFromBlock(Blocks.sandstone_stairs));
+    }
+
+    public void removeRecipe(Item item) {
+        List recipeList = CraftingManager.getInstance().getRecipeList();
+
+        Iterator remover = recipeList.iterator();
+        while(remover.hasNext()) {
+            Object recipeObject = remover.next();
+            if(recipeObject instanceof IRecipe) {
+                IRecipe recipe = (IRecipe) recipeObject;
+                ItemStack itemStack = recipe.getRecipeOutput();
+                if(itemStack != null && itemStack.getItem() == item) {
+                    remover.remove();
+                }
+            }
+        }
     }
 
     public void registerStair(Block stairBlock, Block sourceBlock) {

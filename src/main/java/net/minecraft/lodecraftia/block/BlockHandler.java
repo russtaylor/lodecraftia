@@ -8,6 +8,7 @@ import net.minecraft.lodecraftia.block.vanilla.GoldStairs;
 import net.minecraft.lodecraftia.block.vanilla.HardenedClayStairs;
 import net.minecraft.lodecraftia.block.vanilla.IronSlab;
 import net.minecraft.lodecraftia.block.vanilla.IronStairs;
+import net.minecraft.lodecraftia.block.vanilla.LapisLazuliStairs;
 import net.minecraft.lodecraftia.block.vanilla.NetherBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.NetherQuartzWall;
 import net.minecraft.lodecraftia.block.vanilla.PolishedAndesiteSlab;
@@ -18,6 +19,7 @@ import net.minecraft.lodecraftia.block.vanilla.PolishedGraniteSlab;
 import net.minecraft.lodecraftia.block.vanilla.PolishedGraniteStairs;
 import net.minecraft.lodecraftia.block.vanilla.SandstoneBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.SandstoneWall;
+import net.minecraft.lodecraftia.block.vanilla.SmoothSandstoneStairs;
 import net.minecraft.lodecraftia.block.vanilla.StoneBrickWall;
 import net.minecraft.lodecraftia.block.vanilla.StoneWall;
 
@@ -60,6 +62,8 @@ public class BlockHandler {
         BlockList.polishedAndesiteStairs = new PolishedAndesiteStairs(Blocks.stone).register();
         BlockList.polishedDioriteStairs = new PolishedDioriteStairs(Blocks.stone).register();
         BlockList.polishedGraniteStairs = new PolishedGraniteStairs(Blocks.stone).register();
+        BlockList.lapisLazuliStairs = new LapisLazuliStairs(Blocks.lapis_block).register();
+        BlockList.smoothSandstoneStairs = new SmoothSandstoneStairs(Blocks.sandstone).register();
         BlockList.hardenedClayStairs = new HardenedClayStairs((BlockColored) Blocks.stained_hardened_clay).register();
     }
 
