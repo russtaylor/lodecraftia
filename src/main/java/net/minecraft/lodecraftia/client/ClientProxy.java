@@ -8,6 +8,8 @@ import net.minecraft.lodecraftia.CommonProxy;
 import net.minecraft.lodecraftia.LodecraftiaMod;
 import net.minecraft.lodecraftia.block.BlockList;
 import net.minecraft.lodecraftia.block.IModBlock;
+import net.minecraft.lodecraftia.item.IModItem;
+import net.minecraft.lodecraftia.item.ItemList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -21,6 +23,12 @@ public class ClientProxy extends CommonProxy {
         for (IModBlock block : BlockList.blockList) {
             Item item = GameRegistry.findItem(LodecraftiaMod.MOD_ID, block.getBlockName());
             registerBlockRenderer(item, LodecraftiaMod.MOD_ID + ":" + block.getBlockName());
+        }
+
+        for (IModItem item : ItemList.itemList) {
+            Item gameItem = GameRegistry.findItem(LodecraftiaMod.MOD_ID, item.getItemName());
+            System.out.println("Attempting to register renderer: " + item.getItemName());
+            registerBlockRenderer(gameItem, LodecraftiaMod.MOD_ID + ":" + item.getItemName());
         }
     }
 

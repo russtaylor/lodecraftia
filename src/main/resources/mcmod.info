@@ -2,7 +2,7 @@
 {
   "modid": "lodecraftia",
   "name": "Lodecraftia",
-  "description": "Beginnings of the tests.",
+  "description": "This is Lodecraftia.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

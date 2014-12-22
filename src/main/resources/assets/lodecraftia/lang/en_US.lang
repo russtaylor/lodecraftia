@@ -20,3 +20,7 @@ tile.lapis-lazuli-stairs.name=Lapis Lazuli Stairs
 tile.lapis-lazuli-slab.name=Lapis Lazuli Slab
 tile.smooth-sandstone-stairs.name=Smooth Sandstone Stairs
 tile.smooth-sandstone-slab.name=Smooth Sandstone Slab
+
+item.iron-rod.name=Iron Rod
+item.gold-rod.name=Gold Rod
+item.diamond-rod.name=Diamond Rod
