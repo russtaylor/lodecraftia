@@ -95,7 +95,7 @@ public class RecipeHandler {
 
     public void registerStair(Block stairBlock, Block sourceBlock, int meta) {
         ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
-        ItemStack stairStack = new ItemStack(stairBlock, 4);
+        ItemStack stairStack = new ItemStack(stairBlock, 6);
         GameRegistry.addRecipe(stairStack, "  x", " xx", "xxx", 'x', sourceItemStack);
     }
 
