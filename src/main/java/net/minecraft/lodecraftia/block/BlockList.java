@@ -25,6 +25,7 @@ public class BlockList {
     // Fences
     public static ModBlockFence ironFence;
     public static ModBlockFence goldFence;
+    public static ModBlockFence diamondFence;
 
     // Stairs
     public static ModBlockStairs ironStairs;

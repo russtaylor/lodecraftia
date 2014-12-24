@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,west=false": { "model": "lodecraftia:diamond-fence-post" },
+    "east=false,north=true,south=false,west=false": { "model": "lodecraftia:diamond-fence-n", "uvlock": true },
+    "east=true,north=false,south=false,west=false": { "model": "lodecraftia:diamond-fence-n", "y": 90, "uvlock": true },
+    "east=false,north=false,south=true,west=false": { "model": "lodecraftia:diamond-fence-n", "y": 180, "uvlock": true },
+    "east=false,north=false,south=false,west=true": { "model": "lodecraftia:diamond-fence-n", "y": 270, "uvlock": true },
+    "east=true,north=true,south=false,west=false": { "model": "lodecraftia:diamond-fence-ne", "uvlock": true },
+    "east=true,north=false,south=true,west=false": { "model": "lodecraftia:diamond-fence-ne", "y": 90, "uvlock": true },
+    "east=false,north=false,south=true,west=true": { "model": "lodecraftia:diamond-fence-ne", "y": 180, "uvlock": true },
+    "east=false,north=true,south=false,west=true": { "model": "lodecraftia:diamond-fence-ne", "y": 270, "uvlock": true },
+    "east=false,north=true,south=true,west=false": { "model": "lodecraftia:diamond-fence-ns", "uvlock": true },
+    "east=true,north=false,south=false,west=true": { "model": "lodecraftia:diamond-fence-ns", "y": 90, "uvlock": true },
+    "east=true,north=true,south=true,west=false": { "model": "lodecraftia:diamond-fence-nse", "uvlock": true },
+    "east=true,north=false,south=true,west=true": { "model": "lodecraftia:diamond-fence-nse", "y": 90, "uvlock": true },
+    "east=false,north=true,south=true,west=true": { "model": "lodecraftia:diamond-fence-nse", "y": 180, "uvlock": true },
+    "east=true,north=true,south=false,west=true": { "model": "lodecraftia:diamond-fence-nse", "y": 270, "uvlock": true },
+    "east=true,north=true,south=true,west=true": { "model": "lodecraftia:diamond-fence-nsew", "uvlock": true }
+  }
+}

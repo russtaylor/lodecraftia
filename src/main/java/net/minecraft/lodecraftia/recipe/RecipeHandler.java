@@ -47,6 +47,8 @@ public class RecipeHandler {
 
     private void registerFenceRecipes() {
         registerFence(BlockList.ironFence, Blocks.iron_block, ItemList.ironRod);
+        registerFence(BlockList.goldFence, Blocks.gold_block, ItemList.goldRod);
+        registerFence(BlockList.diamondFence, Blocks.diamond_block, ItemList.diamondRod);
     }
 
     private void registerWallRecipes() {
@@ -112,7 +114,7 @@ public class RecipeHandler {
     private void registerFence(Block fenceBlock, Block plankBlock, Item stickItem) {
         ItemStack plankBlockStack = new ItemStack(plankBlock, 1, 0);
         ItemStack stickItemStack = new ItemStack(stickItem, 1, 0);
-        ItemStack fenceStack = new ItemStack(fenceBlock, 6, 0);
+        ItemStack fenceStack = new ItemStack(fenceBlock, 3, 0);
         GameRegistry.addRecipe(fenceStack, "xyx", "xyx", 'x', plankBlockStack, 'y', stickItemStack);
     }
 

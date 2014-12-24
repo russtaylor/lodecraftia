@@ -3,6 +3,8 @@ package net.minecraft.lodecraftia.block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.vanilla.BrickWall;
+import net.minecraft.lodecraftia.block.vanilla.DiamondFence;
+import net.minecraft.lodecraftia.block.vanilla.GoldFence;
 import net.minecraft.lodecraftia.block.vanilla.GoldSlab;
 import net.minecraft.lodecraftia.block.vanilla.GoldStairs;
 import net.minecraft.lodecraftia.block.vanilla.HardenedClayStairs;
@@ -62,6 +64,8 @@ public class BlockHandler {
 
     private void registerVanillaFences() {
         BlockList.ironFence = new IronFence(Blocks.iron_block).register();
+        BlockList.goldFence = new GoldFence(Blocks.gold_block).register();
+        BlockList.diamondFence = new DiamondFence(Blocks.diamond_block).register();
     }
 
     private void registerVanillaStairs() {
