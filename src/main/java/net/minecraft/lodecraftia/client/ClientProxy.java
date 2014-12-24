@@ -27,7 +27,6 @@ public class ClientProxy extends CommonProxy {
 
         for (IModItem item : ItemList.itemList) {
             Item gameItem = GameRegistry.findItem(LodecraftiaMod.MOD_ID, item.getItemName());
-            System.out.println("Attempting to register renderer: " + item.getItemName());
             registerBlockRenderer(gameItem, LodecraftiaMod.MOD_ID + ":" + item.getItemName());
         }
     }

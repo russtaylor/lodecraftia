@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockWall;
 
 /**
- * Stone walls.
+ * Brick walls.
  *
  * Created by russt on 12/2/14.
  */

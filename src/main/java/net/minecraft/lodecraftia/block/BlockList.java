@@ -13,6 +13,7 @@ public class BlockList {
 
     public static List<IModBlock> blockList = Lists.newArrayList();
 
+    // Walls
     public static ModBlockWall netherQuartzWall;
     public static ModBlockWall netherBrickWall;
     public static ModBlockWall stoneWall;
@@ -20,6 +21,10 @@ public class BlockList {
     public static ModBlockWall sandstoneWall;
     public static ModBlockWall sandstoneBrickWall;
     public static ModBlockWall brickWall;
+
+    // Fences
+    public static ModBlockFence ironFence;
+    public static ModBlockFence goldFence;
 
     // Stairs
     public static ModBlockStairs ironStairs;

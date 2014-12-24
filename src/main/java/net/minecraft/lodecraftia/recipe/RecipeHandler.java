@@ -29,6 +29,7 @@ public class RecipeHandler {
         registerStairRecipes();
         registerSlabRecipes();
         registerRodRecipes();
+        registerFenceRecipes();
         reregisterVanillaRecipes();
     }
 
@@ -42,6 +43,10 @@ public class RecipeHandler {
         ItemStack inputItemStack = new ItemStack(inputItem, 1);
         ItemStack outputItemStack = new ItemStack(outputItem, 4);
         GameRegistry.addRecipe(outputItemStack, "x", "x", 'x', inputItemStack);
+    }
+
+    private void registerFenceRecipes() {
+        registerFence(BlockList.ironFence, Blocks.iron_block, ItemList.ironRod);
     }
 
     private void registerWallRecipes() {
@@ -102,6 +107,13 @@ public class RecipeHandler {
                 }
             }
         }
+    }
+
+    private void registerFence(Block fenceBlock, Block plankBlock, Item stickItem) {
+        ItemStack plankBlockStack = new ItemStack(plankBlock, 1, 0);
+        ItemStack stickItemStack = new ItemStack(stickItem, 1, 0);
+        ItemStack fenceStack = new ItemStack(fenceBlock, 6, 0);
+        GameRegistry.addRecipe(fenceStack, "xyx", "xyx", 'x', plankBlockStack, 'y', stickItemStack);
     }
 
     private void registerStair(Block stairBlock, Block sourceBlock) {

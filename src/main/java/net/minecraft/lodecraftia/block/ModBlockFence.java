@@ -1,5 +1,7 @@
 package net.minecraft.lodecraftia.block;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -7,6 +9,7 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -70,14 +73,14 @@ public class ModBlockFence extends Block implements IModBlock {
     }
 
     /**
-     * Calculates the directions that the wall should face, based on the materials/blocks in each
+     * Calculates the directions that the fence should face, based on the materials/blocks in each
      * adjacent block location.
      *
      * @param blockAccess block access
      * @param blockPos the specified position
-     * @return Whether or not the wall should point toward the specified block.
+     * @return Whether or not the fence should point toward the specified block.
      */
-    public boolean calculateWallDirection(IBlockAccess blockAccess, BlockPos blockPos) {
+    public boolean calculateFenceDirection(IBlockAccess blockAccess, BlockPos blockPos) {
         Block block = blockAccess.getBlockState(blockPos).getBlock();
         if (block != this) {
             if (block != Blocks.barrier) {
@@ -93,46 +96,83 @@ public class ModBlockFence extends Block implements IModBlock {
         }
     }
 
-    public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
-        boolean northFlag = this.calculateWallDirection(access, pos.offsetNorth());
-        boolean flag1 = this.calculateWallDirection(access, pos.offsetSouth());
-        boolean flag2 = this.calculateWallDirection(access, pos.offsetWest());
-        boolean flag3 = this.calculateWallDirection(access, pos.offsetEast());
-        float f = 0.25F;
-        float f1 = 0.75F;
-        float f2 = 0.25F;
-        float f3 = 0.75F;
-        float f4 = 1.0F;
+    public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List list, Entity collidingEntity) {
+        boolean northFlag = this.calculateFenceDirection(worldIn, pos.offsetNorth());
+        boolean southFlag = this.calculateFenceDirection(worldIn, pos.offsetSouth());
+        boolean westFlag = this.calculateFenceDirection(worldIn, pos.offsetWest());
+        boolean eastFlag = this.calculateFenceDirection(worldIn, pos.offsetEast());
+        float f = 0.375F;
+        float f1 = 0.625F;
+        float f2 = 0.375F;
+        float f3 = 0.625F;
 
         if (northFlag) {
             f2 = 0.0F;
         }
 
-        if (flag1) {
+        if (southFlag) {
             f3 = 1.0F;
         }
 
-        if (flag2) {
+        if (northFlag || southFlag) {
+            this.setBlockBounds(f, 0.0F, f2, f1, 1.5F, f3);
+            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+        }
+
+        f2 = 0.375F;
+        f3 = 0.625F;
+
+        if (westFlag) {
             f = 0.0F;
         }
 
-        if (flag3) {
+        if (eastFlag) {
             f1 = 1.0F;
         }
 
-        if (northFlag && flag1 && !flag2 && !flag3) {
-            f4 = 0.8125F;
-            f = 0.3125F;
-            f1 = 0.6875F;
+        if (westFlag || eastFlag || !northFlag && !southFlag) {
+            this.setBlockBounds(f, 0.0F, f2, f1, 1.5F, f3);
+            super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
         }
 
-        else if (!northFlag && !flag1 && flag2 && flag3) {
-            f4 = 0.8125F;
-            f2 = 0.3125F;
-            f3 = 0.6875F;
+        if (northFlag) {
+            f2 = 0.0F;
         }
 
-        this.setBlockBounds(f, 0.0F, f2, f1, f4, f3);
+        if (southFlag) {
+            f3 = 1.0F;
+        }
+
+        this.setBlockBounds(f, 0.0F, f2, f1, 1.0F, f3);
+    }
+
+    public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
+        boolean northFlag = this.calculateFenceDirection(access, pos.offsetNorth());
+        boolean southFlag = this.calculateFenceDirection(access, pos.offsetSouth());
+        boolean westFlag = this.calculateFenceDirection(access, pos.offsetWest());
+        boolean eastFlag = this.calculateFenceDirection(access, pos.offsetEast());
+        float f = 0.375F;
+        float f1 = 0.625F;
+        float f2 = 0.375F;
+        float f3 = 0.625F;
+
+        if (northFlag) {
+            f2 = 0.0F;
+        }
+
+        if (southFlag) {
+            f3 = 1.0F;
+        }
+
+        if (westFlag) {
+            f = 0.0F;
+        }
+
+        if (eastFlag) {
+            f1 = 1.0F;
+        }
+
+        this.setBlockBounds(f, 0.0F, f2, f1, 1.0F, f3);
     }
 
     public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state) {
@@ -142,11 +182,10 @@ public class ModBlockFence extends Block implements IModBlock {
     }
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-        return state.withProperty(UP, !worldIn.isAirBlock(pos.offsetUp()))
-                .withProperty(NORTH, this.calculateWallDirection(worldIn, pos.offsetNorth()))
-                .withProperty(EAST, this.calculateWallDirection(worldIn, pos.offsetEast()))
-                .withProperty(SOUTH, this.calculateWallDirection(worldIn, pos.offsetSouth()))
-                .withProperty(WEST, this.calculateWallDirection(worldIn, pos.offsetWest()));
+        return state.withProperty(NORTH, this.calculateFenceDirection(worldIn, pos.offsetNorth()))
+                .withProperty(EAST, this.calculateFenceDirection(worldIn, pos.offsetEast()))
+                .withProperty(SOUTH, this.calculateFenceDirection(worldIn, pos.offsetSouth()))
+                .withProperty(WEST, this.calculateFenceDirection(worldIn, pos.offsetWest()));
     }
 
     public IBlockState getStateFromMeta(int meta) {
@@ -159,7 +198,7 @@ public class ModBlockFence extends Block implements IModBlock {
     }
 
     protected BlockState createBlockState() {
-        IProperty[] properties = new IProperty[] {UP, NORTH, EAST, SOUTH, WEST};
+        IProperty[] properties = new IProperty[] {NORTH, EAST, SOUTH, WEST};
         return new BlockState(this, properties);
     }
 

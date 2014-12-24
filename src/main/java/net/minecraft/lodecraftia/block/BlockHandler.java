@@ -6,6 +6,7 @@ import net.minecraft.lodecraftia.block.vanilla.BrickWall;
 import net.minecraft.lodecraftia.block.vanilla.GoldSlab;
 import net.minecraft.lodecraftia.block.vanilla.GoldStairs;
 import net.minecraft.lodecraftia.block.vanilla.HardenedClayStairs;
+import net.minecraft.lodecraftia.block.vanilla.IronFence;
 import net.minecraft.lodecraftia.block.vanilla.IronSlab;
 import net.minecraft.lodecraftia.block.vanilla.IronStairs;
 import net.minecraft.lodecraftia.block.vanilla.LapisLazuliSlab;
@@ -44,6 +45,7 @@ public class BlockHandler {
 
     private void registerVanillaBlockExtensions() {
         registerVanillaWalls();
+        registerVanillaFences();
         registerVanillaStairs();
         registerVanillaSlabs();
     }
@@ -56,6 +58,10 @@ public class BlockHandler {
         BlockList.sandstoneWall = new SandstoneWall(Blocks.sandstone).register();
         BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.sandstone).register();
         BlockList.brickWall = new BrickWall(Blocks.brick_block).register();
+    }
+
+    private void registerVanillaFences() {
+        BlockList.ironFence = new IronFence(Blocks.iron_block).register();
     }
 
     private void registerVanillaStairs() {
