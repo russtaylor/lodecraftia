@@ -46,9 +46,9 @@ public class RecipeHandler {
     }
 
     private void registerFenceRecipes() {
-        registerFence(BlockList.ironFence, Blocks.iron_block, ItemList.ironRod);
-        registerFence(BlockList.goldFence, Blocks.gold_block, ItemList.goldRod);
-        registerFence(BlockList.diamondFence, Blocks.diamond_block, ItemList.diamondRod);
+        registerFence(BlockList.ironFence, Blocks.iron_ore, ItemList.ironRod);
+        registerFence(BlockList.goldFence, Blocks.gold_ore, ItemList.goldRod);
+        registerFence(BlockList.diamondFence, Blocks.diamond_ore, ItemList.diamondRod);
     }
 
     private void registerWallRecipes() {
