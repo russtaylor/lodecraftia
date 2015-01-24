@@ -1,17 +1,17 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.walls;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockWall;
 
 /**
- * Quartz walls! Yay!
+ * Stone walls.
  *
  * Created by russt on 12/2/14.
  */
-public class NetherQuartzWall extends ModBlockWall {
-    public static final String BLOCK_NAME = "nether-quartz-wall";
+public class SandstoneWall extends ModBlockWall {
+    public static final String BLOCK_NAME = "sandstone-wall";
 
-    public NetherQuartzWall(Block block) {
+    public SandstoneWall(Block block) {
         super(block, BLOCK_NAME);
     }
 

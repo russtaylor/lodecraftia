@@ -10,6 +10,7 @@ import net.minecraft.lodecraftia.block.BlockList;
 import net.minecraft.lodecraftia.block.IModBlock;
 import net.minecraft.lodecraftia.item.IModItem;
 import net.minecraft.lodecraftia.item.ItemList;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -29,6 +30,10 @@ public class ClientProxy extends CommonProxy {
             Item gameItem = GameRegistry.findItem(LodecraftiaMod.MOD_ID, item.getItemName());
             registerBlockRenderer(gameItem, LodecraftiaMod.MOD_ID + ":" + item.getItemName());
         }
+    }
+
+    public void registerSpecialRenderer() {
+        ClientRegistry.bindTileEntitySpecialRenderer();
     }
 
     public void registerBlockRenderer(Item item, int metadata, String itemName) {

@@ -1,4 +1,4 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.slabs;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockSlab;

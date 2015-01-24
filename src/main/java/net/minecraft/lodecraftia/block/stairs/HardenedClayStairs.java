@@ -1,4 +1,4 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.stairs;
 
 import net.minecraft.block.BlockColored;
 import net.minecraft.block.material.MapColor;

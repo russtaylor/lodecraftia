@@ -1,4 +1,4 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.stairs;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockStairs;
@@ -8,11 +8,11 @@ import net.minecraft.lodecraftia.block.ModBlockStairs;
  *
  * Created by russt on 12/2/14.
  */
-public class PolishedGraniteStairs extends ModBlockStairs {
+public class IronStairs extends ModBlockStairs {
 
-    public static String BLOCK_NAME = "polished-granite-stairs";
+    public static String BLOCK_NAME = "iron-stairs";
 
-    public PolishedGraniteStairs(Block parent) {
+    public IronStairs(Block parent) {
         super(parent, parent.getDefaultState(), BLOCK_NAME);
     }
 

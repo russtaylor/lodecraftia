@@ -1,17 +1,17 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.walls;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockWall;
 
 /**
- * Stone walls.
+ * Nether brick walls! Yay!
  *
  * Created by russt on 12/2/14.
  */
-public class SandstoneWall extends ModBlockWall {
-    public static final String BLOCK_NAME = "sandstone-wall";
+public class NetherBrickWall extends ModBlockWall {
+    public static final String BLOCK_NAME = "nether-brick-wall";
 
-    public SandstoneWall(Block block) {
+    public NetherBrickWall(Block block) {
         super(block, BLOCK_NAME);
     }
 

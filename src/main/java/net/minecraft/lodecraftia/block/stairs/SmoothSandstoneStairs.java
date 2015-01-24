@@ -1,18 +1,18 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.stairs;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockStairs;
 
 /**
- * Custom class for Lapis Lazuli Stairs.
+ * Custom class for Smooth Sandstone Stairs.
  *
  * Created by russt on 12/18/14.
  */
-public class LapisLazuliStairs extends ModBlockStairs {
+public class SmoothSandstoneStairs extends ModBlockStairs {
 
-    public static String BLOCK_NAME = "lapis-lazuli-stairs";
+    public static String BLOCK_NAME = "smooth-sandstone-stairs";
 
-    public LapisLazuliStairs(Block parent) {
+    public SmoothSandstoneStairs(Block parent) {
         super(parent, parent.getDefaultState(), BLOCK_NAME);
     }
 

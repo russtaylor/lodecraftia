@@ -1,4 +1,4 @@
-package net.minecraft.lodecraftia.block.vanilla;
+package net.minecraft.lodecraftia.block.walls;
 
 import net.minecraft.block.Block;
 import net.minecraft.lodecraftia.block.ModBlockWall;
@@ -8,10 +8,10 @@ import net.minecraft.lodecraftia.block.ModBlockWall;
  *
  * Created by russt on 12/2/14.
  */
-public class StoneBrickWall extends ModBlockWall {
-    public static final String BLOCK_NAME = "stone-brick-wall";
+public class StoneWall extends ModBlockWall {
+    public static final String BLOCK_NAME = "stone-wall";
 
-    public StoneBrickWall(Block block) {
+    public StoneWall(Block block) {
         super(block, BLOCK_NAME);
     }
 
