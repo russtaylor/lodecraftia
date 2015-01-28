@@ -1,5 +1,5 @@
 {
-  "parent": "block/outer_stairs",
+  "parent": "block/upper_slab",
   "textures": {
     "bottom": "{mod_name}blocks/{bottom_texture_name}",
     "top": "{mod_name}blocks/{top_texture_name}",

@@ -1,8 +1,8 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "blocks/gold_block",
-    "top": "blocks/gold_block",
-    "side": "blocks/gold_block"
+    "bottom": "{mod_name}blocks/{bottom_texture_name}",
+    "top": "{mod_name}blocks/{top_texture_name}",
+    "side": "{mod_name}blocks/{side_texture_name}"
   }
 }
