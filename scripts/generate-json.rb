@@ -24,6 +24,18 @@ optionParser = OptionParser.new do |opts|
   opts.on('-x', '--texture NAME', 'The name of the texture used for this block') do |texture|
     options[:texture] = texture
   end
+
+  opts.on('-u', '--up TEXTURE', 'The name of the \'top\' texture of this block') do |up|
+    options[:up] = up
+  end
+
+  opts.on('-d', '--down TEXTURE', 'The name of the \'bottom\'texture of this block') do |down|
+    options[:down] = down
+  end
+
+  opts.on('-s', '--side TEXTURE', 'The name of the \'side\' texture of this block') do |side|
+    options[:side] = side
+  end
 end
 
 begin
