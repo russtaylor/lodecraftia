@@ -3,6 +3,9 @@
 #
 
 require 'optparse'
+require 'fileutils'
+
+type_options = [:fence, :slab, :stairs, :wall, :block]
 
 # Handle the command line options.
 options = {}
@@ -53,4 +56,11 @@ rescue OptionParser::InvalidOption, OptionParser::MissingArgument
   exit
 end
 
+def check_valid_type(type)
+  if(type_options.include? type.to_sym)
+    return true
+  else
+    raise "Invalid 'type' option: #{type}, must be one of #{type_options}"
+  end
+end
 
