@@ -68,6 +68,14 @@ def check_valid_type(type, type_options)
   end
 end
 
+def validate_texture_options(options)
+  if(not(options[:texture]))
+    if(not(options[:up]) or not(options[:down]) or not(options[:side]))
+      raise "Must specify either 'texture' or 'up', 'down', and 'side'"
+    end
+  end
+end
+
 def copy_sources(options, source, destination)
   new_sources = Array.new
   Dir.entries(source).each do |current_file|
@@ -81,17 +89,32 @@ def copy_sources(options, source, destination)
   return new_sources
 end
 
+def set_texture_names(options, source_text)
+  mod_name_texture = ''
+  if(options[:include])
+    mod_name_texture = options[:mod] + ':'
+  end
+
+  if(options[:texture])
+    source_text.gsub!(/\{texture_name\}/, options[:texture])
+  end
+end
+
 def edit_content(options, directory, file_list) 
   file_list.each do |file_name| 
-    file = File.open(directory + "/" + file_name, 'w+') do |content|
-      puts "Content: " + content
+    full_path = directory + '/' + file_name
+    file_text = File.read(full_path)
+    file_text.gsub!(/\{mod_name\}/, options[:mod] + ":")
+    file_text = set_texture_names(options, file_text)
+    File.open(full_path, 'w') do |file|
+      file.puts(file_text)
     end
   end
 end
 
 # Execute the script
-
 check_valid_type(options[:type], type_options)
+validate_texture_options(options)
 
 source = "json-source/block-models/#{options[:type]}"
 destination = "../src/main/resources/assets/#{options[:mod]}/models/block"
