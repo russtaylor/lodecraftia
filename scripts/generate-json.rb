@@ -16,7 +16,7 @@ optionParser = OptionParser.new do |opts|
     options[:mod] = mod
   end
 
-  opts.on('-t', '--type TEMPLATE', 'The type of block that you want to generate files for') do |type|
+  opts.on('-t', '--type TYPE', 'The type of block that you want to generate files for') do |type|
     options[:type] = type
   end
 
@@ -42,6 +42,10 @@ optionParser = OptionParser.new do |opts|
 
   opts.on('-i', '--include', 'Whether or not the mod name should be included in the texture path') do |include|
     options[:include] = include
+  end
+
+  opts.on('-p', '--parent', 'The parent block - for example, slabs need a block to use for the double slab') do |parent|
+    options[:parent] = parent
   end
 end
 
