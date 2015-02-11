@@ -103,7 +103,7 @@ def set_texture_names(options, source_text)
 
   end
 
-  if(options[:texture])
+  if options[:texture]
     source_text.gsub!(/\{texture_name\}/, options[:texture])
   end
 end
