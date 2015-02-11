@@ -65,7 +65,7 @@ rescue OptionParser::InvalidOption, OptionParser::MissingArgument
 end
 
 def check_valid_type(type, type_options)
-  if(type_options.include? type.to_sym)
+  if type_options.include? type.to_sym s
     return true
   else
     raise "Invalid 'type' option: #{type}, must be one of #{type_options}"
@@ -83,7 +83,7 @@ end
 def copy_sources(options, source, destination)
   new_sources = Array.new
   Dir.entries(source).each do |current_file|
-    if(current_file == '.' or current_file == '..')
+    if current_file == '.' or current_file == '..'
       next
     end
     new_filename = current_file.gsub(/template/, options[:name])
@@ -95,12 +95,12 @@ end
 
 def set_texture_names(options, source_text)
   mod_name_texture = ''
-  if(options[:include])
+  if options[:include]
     mod_name_texture = options[:mod] + ':'
   end
 
-  if(options[:up] and options[:down] and options[:side])
-    
+  if options[:up] and options[:down] and options[:side]
+
   end
 
   if(options[:texture])
