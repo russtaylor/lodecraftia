@@ -99,13 +99,17 @@ def set_texture_names(options, source_text)
     mod_name_texture = options[:mod] + ':'
   end
 
+  if(options[:up] and options[:down] and options[:side])
+    
+  end
+
   if(options[:texture])
     source_text.gsub!(/\{texture_name\}/, options[:texture])
   end
 end
 
-def edit_content(options, directory, file_list) 
-  file_list.each do |file_name| 
+def edit_content(options, directory, file_list)
+  file_list.each do |file_name|
     full_path = directory + '/' + file_name
     file_text = File.read(full_path)
     file_text.gsub!(/\{mod_name\}/, options[:mod] + ":")
