@@ -3,18 +3,16 @@
 #
 
 require 'optparse'
+require 'set'
 require 'fileutils'
 
 type_options = [:fence, :slab, :stairs, :wall, :block]
+model_directories = ['models/block', 'blockstates', 'models/item']
 
 # Handle the command line options.
 options = {}
 optionParser = OptionParser.new do |opts|
   opts.banner = 'Usage: generate-json.rb [options]'
-
-  opts.on('-m', '--mod NAME', 'The name of your target mod') do |mod|
-    options[:mod] = mod
-  end
 
   opts.on('-t', '--type TYPE', 'The type of block that you want to generate files for') do |type|
     options[:type] = type
@@ -28,30 +26,14 @@ optionParser = OptionParser.new do |opts|
     options[:texture] = texture
   end
 
-  opts.on('-u', '--up TEXTURE', 'The name of the \'top\' texture of this block') do |up|
-    options[:up] = up
-  end
-
-  opts.on('-d', '--down TEXTURE', 'The name of the \'bottom\'texture of this block') do |down|
-    options[:down] = down
-  end
-
-  opts.on('-s', '--side TEXTURE', 'The name of the \'side\' texture of this block') do |side|
-    options[:side] = side
-  end
-
-  opts.on('-i', '--include', 'Whether or not the mod name should be included in the texture path') do |include|
-    options[:include] = include
-  end
-
-  opts.on('-p', '--parent', 'The parent block - for example, slabs need a block to use for the double slab') do |parent|
-    options[:parent] = parent
+  opts.on('-o', '--options OPTIONS', 'A comma-separated list of texture names that should be used for this block.') do |custom|
+    options[:custom] = custom
   end
 end
 
 begin
   optionParser.parse!
-  mandatory = [:mod, :type, :name]
+  mandatory = [:type, :name]
   missing = mandatory.select{ |param| options[param].nil? }
   if not missing.empty?
     puts "Missing required options: #{missing.join(', ')}"
@@ -64,30 +46,68 @@ rescue OptionParser::InvalidOption, OptionParser::MissingArgument
   exit
 end
 
+def load_mod_name
+  File.open('../build.gradle', 'r') do |file|
+    file.find do |line|
+      if line =~ /archivesBaseName/
+        match = /"(?<modname>.*)"/.match(line)
+        return match[:modname]
+      end
+    end
+  end
+end
+
 def check_valid_type(type, type_options)
-  if type_options.include? type.to_sym s
+  if type_options.include? type.to_sym
     return true
   else
     raise "Invalid 'type' option: #{type}, must be one of #{type_options}"
   end
 end
 
-def validate_texture_options(options)
-  if(not(options[:texture]))
-    if(not(options[:up]) or not(options[:down]) or not(options[:side]))
-      raise "Must specify either 'texture' or 'up', 'down', and 'side'"
+def parse_options(options)
+  if not options[:custom].nil?
+    split = options[:custom].split(',')
+    split_options = Array.new
+    split.each do |option|
+      split_options << option.split('=')
     end
   end
+  options[:custom] = split_options
+  return options
 end
 
-def copy_sources(options, source, destination)
-  new_sources = Array.new
-  Dir.entries(source).each do |current_file|
-    if current_file == '.' or current_file == '..'
-      next
+def validate_options(options, files)
+  template_options = Set.new
+  files.each do |file_name|
+    file_text = File.read(file_name)
+    matches = file_text.scan(/\{(?<option_name>[a-z_-]+?)\}/)
+    matches.each do |match|
+      template_options << match
     end
+  end
+  return template_options
+end
+
+def find_templates(options, source, directories)
+  templates = Array.new
+  directories.each do |directory|
+    current_directory = source.gsub(/\{directory\}/, directory)
+    Dir.entries(current_directory).each do |current_file|
+      if current_file == '.' or current_file == '..'
+        next
+      end
+      templates << "#{current_directory}/#{current_file}"
+    end
+  end
+  return templates
+end
+
+def copy_templates(options, templates, destination)
+  new_sources = Array.new
+  templates.each do |current_file|
     new_filename = current_file.gsub(/template/, options[:name])
-    FileUtils.cp(source + '/' + current_file, destination + "/" + new_filename)
+    FileUtils.cp(current_file, "#{destination}/#{new_filename}")
     new_sources << new_filename
   end
   return new_sources
@@ -97,10 +117,6 @@ def set_texture_names(options, source_text)
   mod_name_texture = ''
   if options[:include]
     mod_name_texture = options[:mod] + ':'
-  end
-
-  if options[:up] and options[:down] and options[:side]
-
   end
 
   if options[:texture]
@@ -122,10 +138,15 @@ end
 
 # Execute the script
 check_valid_type(options[:type], type_options)
-validate_texture_options(options)
 
-source = "json-source/block-models/#{options[:type]}"
+source = "json-source/{directory}/#{options[:type]}"
 destination = "../src/main/resources/assets/#{options[:mod]}/models/block"
 
-new_files = copy_sources(options, source, destination)
-edit_content(options, destination, new_files)
+options = parse_options(options)
+source_files = find_templates(options, source, model_directories)
+options[:modname] = load_mod_name()
+
+all_options = validate_options(options, source_files)
+
+# new_files = copy_templates(options, source, destination)
+# edit_content(options, destination, new_files)
