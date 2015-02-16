@@ -77,7 +77,7 @@ def parse_options(options)
   return options
 end
 
-def validate_options(options, files)
+def find_options(files)
   template_options = Set.new
   files.each do |file_name|
     file_text = File.read(file_name)
@@ -140,13 +140,14 @@ end
 check_valid_type(options[:type], type_options)
 
 source = "json-source/{directory}/#{options[:type]}"
-destination = "../src/main/resources/assets/#{options[:mod]}/models/block"
+destination = "../src/main/resources/assets/#{options[:mod]}/{directory}/"
 
 options = parse_options(options)
 source_files = find_templates(options, source, model_directories)
 options[:modname] = load_mod_name()
 
-all_options = validate_options(options, source_files)
+all_options = find_options(source_files)
+puts all_options.inspect
 
 # new_files = copy_templates(options, source, destination)
 # edit_content(options, destination, new_files)
