@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/gold-slab-bottom",
+  "parent": "lodecraftia:block/gold_slab_bottom",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

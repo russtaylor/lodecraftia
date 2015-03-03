@@ -12,7 +12,7 @@ import net.minecraft.lodecraftia.block.ModBlockStairs;
  */
 public class HardenedClayStairs extends ModBlockStairs {
 
-    public static String BLOCK_NAME = "hardened-clay-stairs";
+    public static String BLOCK_NAME = "hardened_clay_stairs";
 
     public HardenedClayStairs(BlockColored parent) {
         super(parent, parent.getDefaultState(), BLOCK_NAME);

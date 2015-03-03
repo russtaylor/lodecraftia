@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/nether-quartz-wall-inventory",
+  "parent": "lodecraftia:block/nether_quartz_wall_inventory",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

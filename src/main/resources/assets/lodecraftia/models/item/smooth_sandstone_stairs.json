@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/smooth-sandstone-stairs",
+  "parent": "lodecraftia:block/smooth_sandstone_stairs",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

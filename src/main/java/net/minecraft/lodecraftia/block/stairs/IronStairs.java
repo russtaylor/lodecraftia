@@ -10,7 +10,7 @@ import net.minecraft.lodecraftia.block.ModBlockStairs;
  */
 public class IronStairs extends ModBlockStairs {
 
-    public static String BLOCK_NAME = "iron-stairs";
+    public static String BLOCK_NAME = "iron_stairs";
 
     public IronStairs(Block parent) {
         super(parent, parent.getDefaultState(), BLOCK_NAME);

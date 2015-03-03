@@ -1,5 +1,5 @@
 {
-    "parent": "lodecraftia:block/iron-fence-inventory",
+    "parent": "lodecraftia:block/iron_fence_inventory",
     "display": {
         "thirdperson": {
             "rotation": [ 0, 0, 180 ],

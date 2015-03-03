@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/lapis-lazuli-slab-bottom",
+  "parent": "lodecraftia:block/lapis_lazuli_slab_bottom",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

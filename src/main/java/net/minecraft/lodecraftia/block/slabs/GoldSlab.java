@@ -10,7 +10,7 @@ import net.minecraft.lodecraftia.block.ModBlockSlab;
  */
 public class GoldSlab extends ModBlockSlab {
 
-    public static final String BLOCK_NAME = "gold-slab";
+    public static final String BLOCK_NAME = "gold_slab";
     public static final float BLOCK_HARDNESS = 3.0F;
     public static final float BLOCK_RESISTANCE = 10.0F;
 

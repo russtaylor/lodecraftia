@@ -10,7 +10,7 @@ import net.minecraft.lodecraftia.block.ModBlockSlab;
  */
 public class LapisLazuliSlab extends ModBlockSlab {
 
-    public static final String BLOCK_NAME = "lapis-lazuli-slab";
+    public static final String BLOCK_NAME = "lapis_lazuli_slab";
     public static final float BLOCK_HARDNESS = 1.5F;
     public static final float BLOCK_RESISTANCE = 10.0F;
 

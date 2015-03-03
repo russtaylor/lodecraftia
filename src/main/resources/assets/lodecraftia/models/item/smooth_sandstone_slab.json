@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/smooth-sandstone-slab-bottom",
+  "parent": "lodecraftia:block/smooth_sandstone_slab_bottom",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

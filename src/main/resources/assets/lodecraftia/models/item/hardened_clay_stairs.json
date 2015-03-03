@@ -1,5 +1,5 @@
 {
-    "parent": "lodecraftia:block/hardened-clay-stairs",
+    "parent": "lodecraftia:block/hardened_clay_stairs",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

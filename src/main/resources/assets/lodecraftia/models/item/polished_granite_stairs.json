@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/polished-granite-stairs",
+  "parent": "lodecraftia:block/polished_granite_stairs",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

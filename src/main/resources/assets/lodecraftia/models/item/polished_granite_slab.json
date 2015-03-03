@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/polished-granite-slab-bottom",
+  "parent": "lodecraftia:block/polished_granite_slab_bottom",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

@@ -9,7 +9,7 @@ import net.minecraft.lodecraftia.block.ModBlockWall;
  * Created by russt on 12/2/14.
  */
 public class StoneBrickWall extends ModBlockWall {
-    public static final String BLOCK_NAME = "stone-brick-wall";
+    public static final String BLOCK_NAME = "stone_brick_wall";
 
     public StoneBrickWall(Block block) {
         super(block, BLOCK_NAME);

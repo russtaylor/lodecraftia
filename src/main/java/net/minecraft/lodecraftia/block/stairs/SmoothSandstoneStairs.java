@@ -10,7 +10,7 @@ import net.minecraft.lodecraftia.block.ModBlockStairs;
  */
 public class SmoothSandstoneStairs extends ModBlockStairs {
 
-    public static String BLOCK_NAME = "smooth-sandstone-stairs";
+    public static String BLOCK_NAME = "smooth_sandstone_stairs";
 
     public SmoothSandstoneStairs(Block parent) {
         super(parent, parent.getDefaultState(), BLOCK_NAME);

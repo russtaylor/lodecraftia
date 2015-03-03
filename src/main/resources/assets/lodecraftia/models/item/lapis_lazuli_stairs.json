@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/lapis-lazuli-stairs",
+  "parent": "lodecraftia:block/lapis_lazuli_stairs",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/iron-slab-bottom",
+  "parent": "lodecraftia:block/iron_slab_bottom",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

@@ -1,6 +1,6 @@
 {
   "variants": {
-    "half=bottom": { "model": "lodecraftia:smooth-sandstone-slab-bottom" },
-    "half=top": { "model": "lodecraftia:smooth-sandstone-slab-top" }
+    "half=bottom": { "model": "lodecraftia:smooth_sandstone_slab_bottom" },
+    "half=top": { "model": "lodecraftia:smooth_sandstone_slab_top" }
   }
 }

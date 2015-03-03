@@ -1,6 +1,6 @@
 {
   "variants": {
-    "half=bottom": { "model": "lodecraftia:polished-andesite-slab-bottom" },
-    "half=top": { "model": "lodecraftia:polished-andesite-slab-top" }
+    "half=bottom": { "model": "lodecraftia:polished_andesite_slab_bottom" },
+    "half=top": { "model": "lodecraftia:polished_andesite_slab_top" }
   }
 }

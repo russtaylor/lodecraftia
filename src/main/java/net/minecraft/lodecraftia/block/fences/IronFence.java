@@ -9,7 +9,7 @@ import net.minecraft.lodecraftia.block.ModBlockFence;
  * Created by russt on 12/2/14.
  */
 public class IronFence extends ModBlockFence {
-    public static final String BLOCK_NAME = "iron-fence";
+    public static final String BLOCK_NAME = "iron_fence";
 
     public IronFence(Block block) {
         super(block, BLOCK_NAME);

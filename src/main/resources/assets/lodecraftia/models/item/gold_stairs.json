@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/gold-stairs",
+  "parent": "lodecraftia:block/gold_stairs",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

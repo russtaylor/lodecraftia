@@ -1,6 +1,6 @@
 {
   "variants": {
-    "half=bottom": { "model": "lodecraftia:iron-slab-bottom" },
-    "half=top": { "model": "lodecraftia:iron-slab-top" }
+    "half=bottom": { "model": "lodecraftia:iron_slab_bottom" },
+    "half=top": { "model": "lodecraftia:iron_slab_top" }
   }
 }

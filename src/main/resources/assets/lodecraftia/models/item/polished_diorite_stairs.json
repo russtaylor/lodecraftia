@@ -1,5 +1,5 @@
 {
-  "parent": "lodecraftia:block/polished-diorite-stairs",
+  "parent": "lodecraftia:block/polished_diorite_stairs",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

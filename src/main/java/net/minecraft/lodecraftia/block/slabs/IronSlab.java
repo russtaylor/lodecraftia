@@ -10,7 +10,7 @@ import net.minecraft.lodecraftia.block.ModBlockSlab;
  */
 public class IronSlab extends ModBlockSlab {
 
-    public static final String BLOCK_NAME = "iron-slab";
+    public static final String BLOCK_NAME = "iron_slab";
     public static final float BLOCK_HARDNESS = 5.0F;
     public static final float BLOCK_RESISTANCE = 10.0F;
 

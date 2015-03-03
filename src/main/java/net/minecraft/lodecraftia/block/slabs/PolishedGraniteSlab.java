@@ -10,7 +10,7 @@ import net.minecraft.lodecraftia.block.ModBlockSlab;
  */
 public class PolishedGraniteSlab extends ModBlockSlab {
 
-    public static final String BLOCK_NAME = "polished-granite-slab";
+    public static final String BLOCK_NAME = "polished_granite_slab";
     public static final float BLOCK_HARDNESS = 1.5F;
     public static final float BLOCK_RESISTANCE = 10.0F;
 
