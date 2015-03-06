@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,west=false": { "model": "{mod_name}{block_name}_post" },
+    "east=false,north=true,south=false,west=false": { "model": "{mod_name}{block_name}_n", "uvlock": true },
+    "east=true,north=false,south=false,west=false": { "model": "{mod_name}{block_name}_n", "y": 90, "uvlock": true },
+    "east=false,north=false,south=true,west=false": { "model": "{mod_name}{block_name}_n", "y": 180, "uvlock": true },
+    "east=false,north=false,south=false,west=true": { "model": "{mod_name}{block_name}_n", "y": 270, "uvlock": true },
+    "east=true,north=true,south=false,west=false": { "model": "{mod_name}{block_name}_ne", "uvlock": true },
+    "east=true,north=false,south=true,west=false": { "model": "{mod_name}{block_name}_ne", "y": 90, "uvlock": true },
+    "east=false,north=false,south=true,west=true": { "model": "{mod_name}{block_name}_ne", "y": 180, "uvlock": true },
+    "east=false,north=true,south=false,west=true": { "model": "{mod_name}{block_name}_ne", "y": 270, "uvlock": true },
+    "east=false,north=true,south=true,west=false": { "model": "{mod_name}{block_name}_ns", "uvlock": true },
+    "east=true,north=false,south=false,west=true": { "model": "{mod_name}{block_name}_ns", "y": 90, "uvlock": true },
+    "east=true,north=true,south=true,west=false": { "model": "{mod_name}{block_name}_nse", "uvlock": true },
+    "east=true,north=false,south=true,west=true": { "model": "{mod_name}{block_name}_nse", "y": 90, "uvlock": true },
+    "east=false,north=true,south=true,west=true": { "model": "{mod_name}{block_name}_nse", "y": 180, "uvlock": true },
+    "east=true,north=true,south=false,west=true": { "model": "{mod_name}{block_name}_nse", "y": 270, "uvlock": true },
+    "east=true,north=true,south=true,west=true": { "model": "{mod_name}{block_name}_nsew", "uvlock": true }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "variants": {
-    "half=bottom": { "model": "{mod_name}{block_name}-bottom" },
-    "half=top": { "model": "{mod_name}{block_name}-top" }
+    "half=bottom": { "model": "{mod_name}{block_name}_bottom" },
+    "half=top": { "model": "{mod_name}{block_name}_top" }
   }
 }
