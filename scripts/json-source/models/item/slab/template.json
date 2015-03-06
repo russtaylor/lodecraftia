@@ -1,5 +1,5 @@
 {
-  "parent": "{mod_name}block/{block_name}-bottom",
+  "parent": "{mod_name}block/{block_name}_bottom",
   "display": {
     "thirdperson": {
       "rotation": [ 10, -45, 170 ],

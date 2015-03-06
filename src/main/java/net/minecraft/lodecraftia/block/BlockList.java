@@ -39,6 +39,7 @@ public class BlockList {
     public static ModBlockStairs hardenedClayStairs;
 
     // Slabs
+    public static ModBlockSlab diamondSlab;
     public static ModBlockSlab ironSlab;
     public static ModBlockSlab goldSlab;
     public static ModBlockSlab polishedAndesiteSlab;

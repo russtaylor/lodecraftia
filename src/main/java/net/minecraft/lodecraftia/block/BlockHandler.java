@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.lodecraftia.block.fences.DiamondFence;
 import net.minecraft.lodecraftia.block.fences.GoldFence;
 import net.minecraft.lodecraftia.block.fences.IronFence;
+import net.minecraft.lodecraftia.block.slabs.DiamondSlab;
 import net.minecraft.lodecraftia.block.slabs.GoldSlab;
 import net.minecraft.lodecraftia.block.slabs.IronSlab;
 import net.minecraft.lodecraftia.block.slabs.LapisLazuliSlab;
@@ -82,6 +83,7 @@ public class BlockHandler {
     }
 
     private void registerVanillaSlabs() {
+        BlockList.diamondSlab = new DiamondSlab(Blocks.diamond_block).register();
         BlockList.ironSlab = new IronSlab(Blocks.iron_block).register();
         BlockList.goldSlab = new GoldSlab(Blocks.gold_block).register();
         BlockList.polishedAndesiteSlab = new PolishedAndesiteSlab(Blocks.stone).register();

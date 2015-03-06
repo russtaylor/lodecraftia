@@ -14,7 +14,7 @@ public class ModBlockDoubleSlab extends ModBlockSingleSlab {
 
     public ModBlockDoubleSlab(ModBlockSingleSlab singleSlabBlock, String blockName,
                               float blockHardness, float blockResistance) {
-        super(singleSlabBlock, blockName + "-double", blockHardness, blockResistance);
+        super(singleSlabBlock, blockName + "_double", blockHardness, blockResistance);
         this.singleSlabBlock = singleSlabBlock;
         setCreativeTab(null);
     }
