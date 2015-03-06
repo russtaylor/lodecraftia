@@ -12,6 +12,7 @@ tile.gold_stairs.name=Gold Stairs
 tile.gold_slab.name=Gold Slab
 tile.gold_fence.name=Gold Fence
 tile.diamond_fence.name=Diamond Fence
+tile.diamond_stairs.name=Diamond Stairs
 tile.polished_andesite_stairs.name=Polished Andesite Stairs
 tile.polished_andesite_slab.name=Polished Andesite Slab
 tile.polished_diorite_stairs.name=Polished Diorite Stairs

@@ -30,6 +30,7 @@ public class BlockList {
     // Stairs
     public static ModBlockStairs ironStairs;
     public static ModBlockStairs goldStairs;
+    public static ModBlockStairs diamondStairs;
     public static ModBlockStairs polishedAndesiteStairs;
     public static ModBlockStairs polishedDioriteStairs;
     public static ModBlockStairs polishedGraniteStairs;

@@ -126,7 +126,7 @@ def edit_content(passed_options, file_options, directory, file_list)
   file_list.each do |file_name|
     full_path = directory + '/' + file_name
     file_text = File.read(full_path)
-    file_text = replace_options(passed_options, file_options, file_text)
+    file_text = replace_options(passed_options, file_options, file_text, full_path)
     File.open(full_path, 'w') do |file|
       file.puts(file_text)
     end
@@ -136,8 +136,8 @@ end
 def validate_options(passed_option_list, file_option_list, non_custom_options)
   missing_options = Array.new
   file_option_list.each do |option|
-    if not passed_option_list.include?(option[0])
-      if not non_custom_options.include?(option[0])
+    if not non_custom_options.include?(option[0])
+      if passed_option_list.nil? or not passed_option_list.include?(option[0])
         missing_options.push(option[0])
       end
     end
@@ -147,7 +147,7 @@ def validate_options(passed_option_list, file_option_list, non_custom_options)
   end
 end
 
-def replace_options(passed_option_list, file_option_list, file_text)
+def replace_options(passed_option_list, file_option_list, file_text, file_path)
   file_option_list.each do |option|
     option = option[0]
     replace_option = passed_option_list[option]
@@ -158,10 +158,10 @@ def replace_options(passed_option_list, file_option_list, file_text)
       replace_option = passed_option_list['custom'][option]
     end
     if option == 'mod_name'
-      if passed_option_list['vanilla']
-        replace_option = "#{replace_option}:"
-      else
+      if passed_option_list['vanilla'] and not file_path.include? 'models/block'
         replace_option = ''
+      else
+        replace_option = "#{replace_option}:"
       end
     end
     file_text.gsub!(/\{#{option}\}/, replace_option)
