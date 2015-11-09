@@ -74,11 +74,11 @@ public class RecipeHandler {
     private void registerSlabRecipes() {
         registerSlab(BlockList.ironSlab.getSingleSlab(), Blocks.iron_block);
         registerSlab(BlockList.goldSlab.getSingleSlab(), Blocks.gold_block);
-        registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetaFromState());
-        registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetaFromState());
-        registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetaFromState());
+        registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetaFromState());
+        registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetaFromState());
+        registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetaFromState());
         registerSlab(BlockList.lapisLazuliSlab.getSingleSlab(), Blocks.lapis_block);
-        registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
+        registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
     }
 
     private void removeVanillaRecipes() {
@@ -89,10 +89,20 @@ public class RecipeHandler {
     private void reregisterVanillaRecipes() {
         registerStair(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.func_176675_a());
 
+        // Re-register normal cobblestone slabs.
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.COBBLESTONE.func_176624_a(), Blocks.cobblestone, 0);
+        // Re-register normal quartz slabs.
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.QUARTZ.func_176624_a(), Blocks.quartz_block, 0);
+        // Re-register normal brick slabs.
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.BRICK.func_176624_a(), Blocks.brick_block, 0);
         // Re-register normal sandstone slabs.
-        ItemStack normalSandstoneSlabStack = new ItemStack(Blocks.stone_slab, 6, BlockStoneSlab.EnumType.SAND.func_176624_a());
-        ItemStack normalSandstone = new ItemStack(Blocks.sandstone, 1, BlockSandStone.EnumType.DEFAULT.func_176675_a());
-        registerSlab(normalSandstone, normalSandstoneSlabStack);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SAND.func_176624_a(), Blocks.sandstone, 0);
+        // Re-register normal stone slabs.
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.STONE.func_176624_a(), Blocks.stone, 0);
+        // Re-register stone brick slabs.
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SMOOTHBRICK.func_176624_a(), Blocks.stonebrick, 0);
+        // Re-register netherbrick stone slabs
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.NETHERBRICK.func_176624_a(), Blocks.nether_brick, 0);
     }
 
     private void removeRecipe(Item item) {
@@ -129,12 +139,12 @@ public class RecipeHandler {
     }
 
     private void registerSlab(Block slabBlock, Block sourceBlock) {
-        this.registerSlab(slabBlock, sourceBlock, 0);
+        this.registerSlab(slabBlock, 0, sourceBlock, 0);
     }
 
-    private void registerSlab(Block slabBlock, Block sourceBlock, int meta) {
-        ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, meta);
-        ItemStack slabStack = new ItemStack(slabBlock, 6);
+    private void registerSlab(Block slabBlock, int slabMeta, Block sourceBlock, int blockMeta) {
+        ItemStack sourceItemStack = new ItemStack(sourceBlock, 1, blockMeta);
+        ItemStack slabStack = new ItemStack(slabBlock, 6, slabMeta);
         registerSlab(sourceItemStack, slabStack);
     }
 
