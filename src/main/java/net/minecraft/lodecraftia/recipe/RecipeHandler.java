@@ -3,10 +3,7 @@ package net.minecraft.lodecraftia.recipe;
 import java.util.Iterator;
 import java.util.List;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockSandStone;
-import net.minecraft.block.BlockStone;
-import net.minecraft.block.BlockStoneSlab;
+import net.minecraft.block.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -82,26 +79,44 @@ public class RecipeHandler {
     }
 
     private void removeVanillaRecipes() {
+        removeRecipe(Item.getItemFromBlock(Blocks.stone_slab));
+
+        // Remove Stair recipes
         removeRecipe(Item.getItemFromBlock(Blocks.sandstone_stairs));
-        removeRecipe(new ItemStack(Blocks.stone_slab, 1, BlockStoneSlab.EnumType.SAND.func_176624_a()).getItem());
+        removeRecipe(Item.getItemFromBlock(Blocks.stone_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.spruce_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.acacia_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.birch_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.dark_oak_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.jungle_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.oak_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.quartz_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.red_sandstone_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.nether_brick_stairs));
+        removeRecipe(Item.getItemFromBlock(Blocks.brick_stairs));
     }
 
     private void reregisterVanillaRecipes() {
+        // Re-register default stairs.
+        registerStair(Blocks.stone_stairs, Blocks.cobblestone);
+        registerStair(Blocks.spruce_stairs, Blocks.planks, BlockPlanks.EnumType.SPRUCE.func_176839_a());
+        registerStair(Blocks.acacia_stairs, Blocks.planks, BlockPlanks.EnumType.ACACIA.func_176839_a());
+        registerStair(Blocks.birch_stairs, Blocks.planks, BlockPlanks.EnumType.BIRCH.func_176839_a());
+        registerStair(Blocks.dark_oak_stairs, Blocks.planks, BlockPlanks.EnumType.DARK_OAK.func_176839_a());
+        registerStair(Blocks.jungle_stairs, Blocks.planks, BlockPlanks.EnumType.JUNGLE.func_176839_a());
+        registerStair(Blocks.oak_stairs, Blocks.planks, BlockPlanks.EnumType.OAK.func_176839_a());
+        registerStair(Blocks.quartz_stairs, Blocks.quartz_block);
+        registerStair(Blocks.red_sandstone_stairs, Blocks.red_sandstone);
+        registerStair(Blocks.nether_brick_stairs, Blocks.nether_brick);
         registerStair(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.func_176675_a());
 
-        // Re-register normal cobblestone slabs.
+        // Re-register normal slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.COBBLESTONE.func_176624_a(), Blocks.cobblestone, 0);
-        // Re-register normal quartz slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.QUARTZ.func_176624_a(), Blocks.quartz_block, 0);
-        // Re-register normal brick slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.BRICK.func_176624_a(), Blocks.brick_block, 0);
-        // Re-register normal sandstone slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SAND.func_176624_a(), Blocks.sandstone, 0);
-        // Re-register normal stone slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.STONE.func_176624_a(), Blocks.stone, 0);
-        // Re-register stone brick slabs.
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SMOOTHBRICK.func_176624_a(), Blocks.stonebrick, 0);
-        // Re-register netherbrick stone slabs
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.NETHERBRICK.func_176624_a(), Blocks.nether_brick, 0);
     }
 
