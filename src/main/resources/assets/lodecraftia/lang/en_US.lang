@@ -26,6 +26,7 @@ tile.lapis_lazuli_slab.name=Lapis Lazuli Slab
 tile.smooth_sandstone_stairs.name=Smooth Sandstone Stairs
 tile.smooth_sandstone_slab.name=Smooth Sandstone Slab
 tile.gravel_slab.name=Gravel Slab
+tile.dirt_slab.name=Dirt Slab
 
 item.iron_rod.name=Iron Rod
 item.gold_rod.name=Gold Rod

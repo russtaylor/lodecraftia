@@ -80,6 +80,7 @@ public class BlockHandler {
         BlockList.ironSlab = new IronSlab(Blocks.iron_block).register();
         BlockList.goldSlab = new GoldSlab(Blocks.gold_block).register();
         BlockList.gravelSlab = new GravelSlab(Blocks.gravel).register();
+        BlockList.dirtSlab = new DirtSlab(Blocks.dirt).register();
         BlockList.polishedAndesiteSlab = new PolishedAndesiteSlab(Blocks.stone).register();
         BlockList.polishedDioriteSlab = new PolishedDioriteSlab(Blocks.stone).register();
         BlockList.polishedGraniteSlab = new PolishedGraniteSlab(Blocks.stone).register();
