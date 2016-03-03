@@ -81,21 +81,21 @@ public class RecipeHandler {
     }
 
     private void removeVanillaRecipes() {
-        removeRecipe(Item.getItemFromBlock(Blocks.stone_slab));
+        removeBlockRecipe(Blocks.stone_slab);
 
         // Remove Stair recipes
-        removeRecipe(Item.getItemFromBlock(Blocks.sandstone_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.stone_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.spruce_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.acacia_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.birch_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.dark_oak_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.jungle_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.oak_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.quartz_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.red_sandstone_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.nether_brick_stairs));
-        removeRecipe(Item.getItemFromBlock(Blocks.brick_stairs));
+        removeBlockRecipe(Blocks.sandstone_stairs);
+        removeBlockRecipe(Blocks.stone_stairs);
+        removeBlockRecipe(Blocks.spruce_stairs);
+        removeBlockRecipe(Blocks.acacia_stairs);
+        removeBlockRecipe(Blocks.birch_stairs);
+        removeBlockRecipe(Blocks.dark_oak_stairs);
+        removeBlockRecipe(Blocks.jungle_stairs);
+        removeBlockRecipe(Blocks.oak_stairs);
+        removeBlockRecipe(Blocks.quartz_stairs);
+        removeBlockRecipe(Blocks.red_sandstone_stairs);
+        removeBlockRecipe(Blocks.nether_brick_stairs);
+        removeBlockRecipe(Blocks.brick_stairs);
     }
 
     private void reregisterVanillaRecipes() {
@@ -120,6 +120,11 @@ public class RecipeHandler {
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.STONE.func_176624_a(), Blocks.stone, 0);
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SMOOTHBRICK.func_176624_a(), Blocks.stonebrick, 0);
         registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.NETHERBRICK.func_176624_a(), Blocks.nether_brick, 0);
+    }
+
+    private void removeBlockRecipe(Block block) {
+        Item item = Item.getItemFromBlock(block);
+        this.removeRecipe(item);
     }
 
     private void removeRecipe(Item item) {
