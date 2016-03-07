@@ -2,6 +2,9 @@ package net.minecraft.lodecraftia.block;
 
 import net.minecraft.block.BlockColored;
 import net.minecraft.init.Blocks;
+import net.minecraft.lodecraftia.block.blocks.AndesiteStone;
+import net.minecraft.lodecraftia.block.blocks.BasaltStone;
+import net.minecraft.lodecraftia.block.blocks.BauxiteStone;
 import net.minecraft.lodecraftia.block.fences.DiamondFence;
 import net.minecraft.lodecraftia.block.fences.GoldFence;
 import net.minecraft.lodecraftia.block.fences.IronFence;
@@ -45,6 +48,13 @@ public class BlockHandler {
         registerVanillaFences();
         registerVanillaStairs();
         registerVanillaSlabs();
+        registerStoneTypes();
+    }
+
+    private void registerStoneTypes() {
+        BlockList.andesiteStone = new AndesiteStone().register();
+        BlockList.basaltStone = new BasaltStone().register();
+        BlockList.bauxiteStone   = new BauxiteStone().register();
     }
 
     private void registerVanillaWalls() {

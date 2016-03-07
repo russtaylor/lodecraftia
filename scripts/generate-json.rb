@@ -8,7 +8,7 @@ require 'fileutils'
 
 type_options = %w(fence slab stairs wall block)
 model_directories = %w(models/block blockstates models/item)
-non_custom_options = %w(block_name mod_name vanilla)
+non_custom_options = %w(block_name mod_name vanilla texture)
 
 # Handle the command line options.
 options = {}

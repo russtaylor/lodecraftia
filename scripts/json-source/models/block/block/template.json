@@ -1,0 +1,6 @@
+{
+  "parent": "block/stone",
+  "textures": {
+    "all": "{mod_name}blocks/{texture}"
+  }
+}

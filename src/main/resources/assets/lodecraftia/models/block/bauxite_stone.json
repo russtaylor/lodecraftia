@@ -1,0 +1,6 @@
+{
+  "parent": "block/stone",
+  "textures": {
+    "all": "lodecraftia:blocks/bauxite_stone"
+  }
+}

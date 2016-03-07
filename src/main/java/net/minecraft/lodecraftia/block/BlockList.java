@@ -13,6 +13,11 @@ public class BlockList {
 
     public static List<IModBlock> blockList = Lists.newArrayList();
 
+    // Stone Types
+    public static ModBlock andesiteStone;
+    public static ModBlock basaltStone;
+    public static ModBlock bauxiteStone;
+
     // Walls
     public static ModBlockWall netherQuartzWall;
     public static ModBlockWall netherBrickWall;
