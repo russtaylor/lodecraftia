@@ -4,11 +4,15 @@ import net.minecraft.lodecraftia.block.BlockHandler;
 import net.minecraft.lodecraftia.item.ItemHandler;
 import net.minecraft.lodecraftia.recipe.RecipeHandler;
 import net.minecraft.lodecraftia.world.ModBlockGenerator;
+import net.minecraft.lodecraftia.world.ModWorldGenerator;
+import net.minecraft.world.World;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = LodecraftiaMod.MOD_ID, name = LodecraftiaMod.MOD_NAME, version = LodecraftiaMod.VERSION)
@@ -17,6 +21,11 @@ public class LodecraftiaMod
     public static final String MOD_ID = "lodecraftia";
     public static final String VERSION = "0.1";
     public static final String MOD_NAME = "Lodecraftia";
+
+    // World
+    public static World world;
+    public static long worldSeed;
+    public static ModWorldGenerator worldGenerator;
 
     // Blocks
     public static BlockHandler blockHandler = new BlockHandler();
@@ -45,8 +54,14 @@ public class LodecraftiaMod
         GameRegistry.registerWorldGenerator(generator, 50);
     }
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-        proxy.registerRenderers();
+    @SubscribeEvent
+    public void onWorldLoad(WorldEvent.Load event) {
+        world = event.world;
+        worldSeed = world.getSeed();
+        worldGenerator = new ModWorldGenerator(
+                worldSeed,
+                world.getWorldInfo().getTerrainType(),
+                world.getWorldInfo().getGeneratorOptions());
     }
+
 }

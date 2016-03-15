@@ -54,18 +54,18 @@ public class RecipeHandler {
         registerWall(BlockList.stoneWall, Blocks.stone);
         registerWall(BlockList.stoneBrickWall, Blocks.stonebrick);
         registerWall(BlockList.sandstoneWall, Blocks.sandstone);
-        registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
+        registerWall(BlockList.sandstoneBrickWall, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
         registerWall(BlockList.brickWall, Blocks.brick_block);
     }
 
     private void registerStairRecipes() {
         registerStair(BlockList.ironStairs, Blocks.iron_block);
         registerStair(BlockList.goldStairs, Blocks.gold_block);
-        registerStair(BlockList.polishedAndesiteStairs, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetaFromState());
-        registerStair(BlockList.polishedDioriteStairs, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetaFromState());
-        registerStair(BlockList.polishedGraniteStairs, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetaFromState());
+        registerStair(BlockList.polishedAndesiteStairs, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        registerStair(BlockList.polishedDioriteStairs, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        registerStair(BlockList.polishedGraniteStairs, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
         registerStair(BlockList.lapisLazuliStairs, Blocks.lapis_block);
-        registerStair(BlockList.smoothSandstoneStairs, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
+        registerStair(BlockList.smoothSandstoneStairs, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
     }
 
     private void registerSlabRecipes() {
@@ -73,11 +73,11 @@ public class RecipeHandler {
         registerSlab(BlockList.goldSlab.getSingleSlab(), Blocks.gold_block);
         registerSlab(BlockList.gravelSlab.getSingleSlab(), Blocks.gravel);
         registerSlab(BlockList.dirtSlab.getSingleSlab(), Blocks.dirt);
-        registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetaFromState());
-        registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetaFromState());
-        registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetaFromState());
+        registerSlab(BlockList.polishedAndesiteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.ANDESITE_SMOOTH.getMetadata());
+        registerSlab(BlockList.polishedDioriteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.DIORITE_SMOOTH.getMetadata());
+        registerSlab(BlockList.polishedGraniteSlab.getSingleSlab(), 0, Blocks.stone, BlockStone.EnumType.GRANITE_SMOOTH.getMetadata());
         registerSlab(BlockList.lapisLazuliSlab.getSingleSlab(), Blocks.lapis_block);
-        registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.func_176675_a());
+        registerSlab(BlockList.smoothSandstoneSlab.getSingleSlab(), 0, Blocks.sandstone, BlockSandStone.EnumType.SMOOTH.getMetadata());
     }
 
     private void removeVanillaRecipes() {
@@ -101,25 +101,25 @@ public class RecipeHandler {
     private void reregisterVanillaRecipes() {
         // Re-register default stairs.
         registerStair(Blocks.stone_stairs, Blocks.cobblestone);
-        registerStair(Blocks.spruce_stairs, Blocks.planks, BlockPlanks.EnumType.SPRUCE.func_176839_a());
-        registerStair(Blocks.acacia_stairs, Blocks.planks, BlockPlanks.EnumType.ACACIA.func_176839_a());
-        registerStair(Blocks.birch_stairs, Blocks.planks, BlockPlanks.EnumType.BIRCH.func_176839_a());
-        registerStair(Blocks.dark_oak_stairs, Blocks.planks, BlockPlanks.EnumType.DARK_OAK.func_176839_a());
-        registerStair(Blocks.jungle_stairs, Blocks.planks, BlockPlanks.EnumType.JUNGLE.func_176839_a());
-        registerStair(Blocks.oak_stairs, Blocks.planks, BlockPlanks.EnumType.OAK.func_176839_a());
+        registerStair(Blocks.spruce_stairs, Blocks.planks, BlockPlanks.EnumType.SPRUCE.getMetadata());
+        registerStair(Blocks.acacia_stairs, Blocks.planks, BlockPlanks.EnumType.ACACIA.getMetadata());
+        registerStair(Blocks.birch_stairs, Blocks.planks, BlockPlanks.EnumType.BIRCH.getMetadata());
+        registerStair(Blocks.dark_oak_stairs, Blocks.planks, BlockPlanks.EnumType.DARK_OAK.getMetadata());
+        registerStair(Blocks.jungle_stairs, Blocks.planks, BlockPlanks.EnumType.JUNGLE.getMetadata());
+        registerStair(Blocks.oak_stairs, Blocks.planks, BlockPlanks.EnumType.OAK.getMetadata());
         registerStair(Blocks.quartz_stairs, Blocks.quartz_block);
         registerStair(Blocks.red_sandstone_stairs, Blocks.red_sandstone);
         registerStair(Blocks.nether_brick_stairs, Blocks.nether_brick);
-        registerStair(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.func_176675_a());
+        registerStair(Blocks.sandstone_stairs, Blocks.sandstone, BlockSandStone.EnumType.DEFAULT.getMetadata());
 
         // Re-register normal slabs.
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.COBBLESTONE.func_176624_a(), Blocks.cobblestone, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.QUARTZ.func_176624_a(), Blocks.quartz_block, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.BRICK.func_176624_a(), Blocks.brick_block, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SAND.func_176624_a(), Blocks.sandstone, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.STONE.func_176624_a(), Blocks.stone, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SMOOTHBRICK.func_176624_a(), Blocks.stonebrick, 0);
-        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.NETHERBRICK.func_176624_a(), Blocks.nether_brick, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.COBBLESTONE.getMetadata(), Blocks.cobblestone, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.QUARTZ.getMetadata(), Blocks.quartz_block, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.BRICK.getMetadata(), Blocks.brick_block, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SAND.getMetadata(), Blocks.sandstone, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.STONE.getMetadata(), Blocks.stone, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.SMOOTHBRICK.getMetadata(), Blocks.stonebrick, 0);
+        registerSlab(Blocks.stone_slab, BlockStoneSlab.EnumType.NETHERBRICK.getMetadata(), Blocks.nether_brick, 0);
     }
 
     private void removeBlockRecipe(Block block) {
