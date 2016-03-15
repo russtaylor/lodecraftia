@@ -35,22 +35,22 @@ public class ModBlockSlabItem extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack stack)
     {
-        return this.singleSlab.getFullSlabName(stack.getMetadata());
+        return this.singleSlab.getUnlocalizedName(stack.getMetadata());
     }
 
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        if (stack.stackSize == 0 || !playerIn.func_175151_a(pos.offset(side), side, stack)) {
+        if (stack.stackSize == 0 || !playerIn.canPlayerEdit(pos.offset(side), side, stack)) {
             return false;
         } else {
-            Object object = this.singleSlab.func_176553_a(stack);
+            Object object = this.singleSlab.getVariant(stack);
             IBlockState iblockstate = worldIn.getBlockState(pos);
 
             if (iblockstate.getBlock() == this.singleSlab) {
-                BlockSlab.EnumBlockHalf enumblockhalf = (BlockSlab.EnumBlockHalf) iblockstate.getValue(BlockSlab.HALF_PROP);
+                BlockSlab.EnumBlockHalf enumBlockHalf = (BlockSlab.EnumBlockHalf) iblockstate.getValue(BlockSlab.HALF);
 
-                if ((side == EnumFacing.UP && enumblockhalf == BlockSlab.EnumBlockHalf.BOTTOM || side == EnumFacing.DOWN && enumblockhalf == BlockSlab.EnumBlockHalf.TOP)) {
+                if ((side == EnumFacing.UP && enumBlockHalf == BlockSlab.EnumBlockHalf.BOTTOM || side == EnumFacing.DOWN && enumBlockHalf == BlockSlab.EnumBlockHalf.TOP)) {
                     IBlockState iblockstate1 = this.doubleSlab.getDefaultState();
 
                     if (worldIn.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBox(worldIn, pos, iblockstate1)) && worldIn.setBlockState(pos, iblockstate1, 3)) {
@@ -69,13 +69,13 @@ public class ModBlockSlabItem extends ItemBlock {
     @SideOnly(Side.CLIENT)
     public boolean canPlaceBlockOnSide(World worldIn, BlockPos p_179222_2_, EnumFacing p_179222_3_, EntityPlayer p_179222_4_, ItemStack p_179222_5_)
     {
-        BlockPos blockpos1 = p_179222_2_;
-        Object object = this.singleSlab.func_176553_a(p_179222_5_);
+        BlockPos blockPos = p_179222_2_;
+        Object object = this.singleSlab.getVariant(p_179222_5_);
         IBlockState iblockstate = worldIn.getBlockState(p_179222_2_);
 
         if (iblockstate.getBlock() == this.singleSlab)
         {
-            boolean flag = iblockstate.getValue(BlockSlab.HALF_PROP) == BlockSlab.EnumBlockHalf.TOP;
+            boolean flag = iblockstate.getValue(BlockSlab.HALF) == BlockSlab.EnumBlockHalf.TOP;
 
             if ((p_179222_3_ == EnumFacing.UP && !flag || p_179222_3_ == EnumFacing.DOWN && flag))
             {
@@ -84,8 +84,8 @@ public class ModBlockSlabItem extends ItemBlock {
         }
 
         p_179222_2_ = p_179222_2_.offset(p_179222_3_);
-        IBlockState iblockstate1 = worldIn.getBlockState(p_179222_2_);
-        return iblockstate1.getBlock() == this.singleSlab || super.canPlaceBlockOnSide(worldIn, blockpos1, p_179222_3_, p_179222_4_, p_179222_5_);
+        IBlockState iBlockState = worldIn.getBlockState(p_179222_2_);
+        return iBlockState.getBlock() == this.singleSlab || super.canPlaceBlockOnSide(worldIn, blockPos, p_179222_3_, p_179222_4_, p_179222_5_);
     }
 
     private boolean func_180615_a(ItemStack p_180615_1_, World worldIn, BlockPos p_180615_3_, Object p_180615_4_)
@@ -94,9 +94,9 @@ public class ModBlockSlabItem extends ItemBlock {
 
         if (iblockstate.getBlock() == this.singleSlab)
         {
-            IBlockState iblockstate1 = this.doubleSlab.getDefaultState();
+            IBlockState iBlockState = this.doubleSlab.getDefaultState();
 
-            if (worldIn.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBox(worldIn, p_180615_3_, iblockstate1)) && worldIn.setBlockState(p_180615_3_, iblockstate1, 3))
+            if (worldIn.checkNoEntityCollision(this.doubleSlab.getCollisionBoundingBox(worldIn, p_180615_3_, iBlockState)) && worldIn.setBlockState(p_180615_3_, iBlockState, 3))
             {
                 worldIn.playSoundEffect((double)((float)p_180615_3_.getX() + 0.5F), (double)((float)p_180615_3_.getY() + 0.5F), (double)((float)p_180615_3_.getZ() + 0.5F), this.doubleSlab.stepSound.getPlaceSound(), (this.doubleSlab.stepSound.getVolume() + 1.0F) / 2.0F, this.doubleSlab.stepSound.getFrequency() * 0.8F);
                 --p_180615_1_.stackSize;

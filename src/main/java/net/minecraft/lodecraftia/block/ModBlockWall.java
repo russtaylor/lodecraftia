@@ -96,10 +96,10 @@ public class ModBlockWall extends Block implements IModBlock {
     }
 
     public void setBlockBoundsBasedOnState(IBlockAccess access, BlockPos pos) {
-        boolean northFlag = this.calculateWallDirection(access, pos.offsetNorth());
-        boolean flag1 = this.calculateWallDirection(access, pos.offsetSouth());
-        boolean flag2 = this.calculateWallDirection(access, pos.offsetWest());
-        boolean flag3 = this.calculateWallDirection(access, pos.offsetEast());
+        boolean northFlag = this.calculateWallDirection(access, pos.north());
+        boolean flag1 = this.calculateWallDirection(access, pos.south());
+        boolean flag2 = this.calculateWallDirection(access, pos.west());
+        boolean flag3 = this.calculateWallDirection(access, pos.east());
         float f = 0.25F;
         float f1 = 0.75F;
         float f2 = 0.25F;
@@ -144,11 +144,11 @@ public class ModBlockWall extends Block implements IModBlock {
     }
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-        return state.withProperty(UP, !worldIn.isAirBlock(pos.offsetUp()))
-                .withProperty(NORTH, this.calculateWallDirection(worldIn, pos.offsetNorth()))
-                .withProperty(EAST, this.calculateWallDirection(worldIn, pos.offsetEast()))
-                .withProperty(SOUTH, this.calculateWallDirection(worldIn, pos.offsetSouth()))
-                .withProperty(WEST, this.calculateWallDirection(worldIn, pos.offsetWest()));
+        return state.withProperty(UP, !worldIn.isAirBlock(pos.up()))
+                .withProperty(NORTH, this.calculateWallDirection(worldIn, pos.north()))
+                .withProperty(EAST, this.calculateWallDirection(worldIn, pos.east()))
+                .withProperty(SOUTH, this.calculateWallDirection(worldIn, pos.south()))
+                .withProperty(WEST, this.calculateWallDirection(worldIn, pos.west()));
     }
 
     public IBlockState getStateFromMeta(int meta) {
