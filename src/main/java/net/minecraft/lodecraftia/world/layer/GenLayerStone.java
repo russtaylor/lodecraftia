@@ -15,7 +15,6 @@ public abstract class GenLayerStone extends GenLayer {
         super(argument1);
     }
 
-
     public static GenLayer[] initializeBiomeGenerators(long seed, WorldType worldType, String config) {
         // We need to do essentially the same here as in Minecraft's 'GenLayer'
         GenLayerIsland genLayerIsland = new GenLayerIsland(1L);
