@@ -1,4 +1,4 @@
-package us.vombat.lodecraftia.world;
+package us.vombat.lodecraftia.world.noise;
 
 /**
  * Base class for all noise generators

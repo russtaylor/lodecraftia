@@ -1,4 +1,4 @@
-package us.vombat.lodecraftia.world;
+package us.vombat.lodecraftia.world.noise;
 
 import net.minecraft.world.World;
 
