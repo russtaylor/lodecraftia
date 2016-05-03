@@ -45,7 +45,6 @@ public class BlockHandler {
 
     private void registerVanillaBlockExtensions() {
         registerVanillaWalls();
-        registerVanillaFences();
         registerVanillaStairs();
         registerVanillaSlabs();
         registerStoneTypes();
@@ -65,12 +64,6 @@ public class BlockHandler {
         BlockList.sandstoneWall = new SandstoneWall(Blocks.sandstone).register();
         BlockList.sandstoneBrickWall = new SandstoneBrickWall(Blocks.sandstone).register();
         BlockList.brickWall = new BrickWall(Blocks.brick_block).register();
-    }
-
-    private void registerVanillaFences() {
-        BlockList.ironFence = new IronFence(Blocks.iron_block).register();
-        BlockList.goldFence = new GoldFence(Blocks.gold_block).register();
-        BlockList.diamondFence = new DiamondFence(Blocks.diamond_block).register();
     }
 
     private void registerVanillaStairs() {

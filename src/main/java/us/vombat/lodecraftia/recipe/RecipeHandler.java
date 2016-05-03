@@ -16,8 +16,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Handles creating the recipes needed by the mod.
- *
- * Created by russt on 12/12/14.
  */
 public class RecipeHandler {
     public void registerRecipes() {
@@ -25,27 +23,7 @@ public class RecipeHandler {
         registerWallRecipes();
         registerStairRecipes();
         registerSlabRecipes();
-        registerRodRecipes();
-        registerFenceRecipes();
         reregisterVanillaRecipes();
-    }
-
-    private void registerRodRecipes() {
-        registerRod(Items.iron_ingot, ItemList.ironRod);
-        registerRod(Items.diamond, ItemList.diamondRod);
-        registerRod(Items.gold_ingot, ItemList.goldRod);
-    }
-
-    private void registerRod(Item inputItem, Item outputItem) {
-        ItemStack inputItemStack = new ItemStack(inputItem, 1);
-        ItemStack outputItemStack = new ItemStack(outputItem, 4);
-        GameRegistry.addRecipe(outputItemStack, "x", "x", 'x', inputItemStack);
-    }
-
-    private void registerFenceRecipes() {
-        registerFence(BlockList.ironFence, Blocks.iron_ore, ItemList.ironRod);
-        registerFence(BlockList.goldFence, Blocks.gold_ore, ItemList.goldRod);
-        registerFence(BlockList.diamondFence, Blocks.diamond_ore, ItemList.diamondRod);
     }
 
     private void registerWallRecipes() {

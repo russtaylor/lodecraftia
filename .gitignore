@@ -16,6 +16,8 @@
 /repo/
 /buildSrc
 
+run/
+
 #Patch rejects
 *.rej
 /patches-/

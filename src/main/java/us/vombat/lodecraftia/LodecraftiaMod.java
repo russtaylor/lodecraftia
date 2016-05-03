@@ -14,11 +14,11 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+@SuppressWarnings("unused")
 @Mod(modid = LodecraftiaMod.MOD_ID, name = LodecraftiaMod.MOD_NAME, version = LodecraftiaMod.VERSION)
-public class LodecraftiaMod
-{
+public class LodecraftiaMod {
     public static final String MOD_ID = "lodecraftia";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "0.2.0";
     public static final String MOD_NAME = "Lodecraftia";
 
     // World
@@ -27,13 +27,13 @@ public class LodecraftiaMod
     public static ModWorldGenerator worldGenerator;
 
     // Blocks
-    public static BlockHandler blockHandler = new BlockHandler();
+    private static BlockHandler blockHandler = new BlockHandler();
 
     // Items
-    public static ItemHandler itemHandler = new ItemHandler();
+    private static ItemHandler itemHandler = new ItemHandler();
 
     // Recipes
-    public static RecipeHandler recipeHandler = new RecipeHandler();
+    private static RecipeHandler recipeHandler = new RecipeHandler();
 
     // World generation
     private ModBlockGenerator generator = new ModBlockGenerator();
@@ -41,8 +41,8 @@ public class LodecraftiaMod
     @Mod.Instance
     public static LodecraftiaMod instance;
 
-    @SidedProxy(clientSide = "ClientProxy",
-            serverSide = "CommonProxy")
+    @SidedProxy(clientSide = "us.vombat.lodecraftia.client.ClientProxy",
+            serverSide = "us.vombat.lodecraftia.CommonProxy")
     public static CommonProxy proxy;
 
     @EventHandler
@@ -61,6 +61,7 @@ public class LodecraftiaMod
                 worldSeed,
                 world.getWorldInfo().getTerrainType(),
                 world.getWorldInfo().getGeneratorOptions());
+        GameRegistry.registerWorldGenerator(worldGenerator, 500);
     }
 
 }

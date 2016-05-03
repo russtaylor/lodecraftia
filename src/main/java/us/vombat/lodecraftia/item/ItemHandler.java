@@ -1,9 +1,5 @@
 package us.vombat.lodecraftia.item;
 
-import us.vombat.lodecraftia.item.rod.DiamondRod;
-import us.vombat.lodecraftia.item.rod.GoldRod;
-import us.vombat.lodecraftia.item.rod.IronRod;
-
 /**
  * Handles the creation of our mod's Items.
  *
@@ -17,12 +13,7 @@ public class ItemHandler {
     }
 
     public void registerItems() {
-        registerRods();
+
     }
 
-    private void registerRods() {
-        ItemList.ironRod = new IronRod().register();
-        ItemList.goldRod = new GoldRod().register();
-        ItemList.diamondRod = new DiamondRod().register();
-    }
 }
